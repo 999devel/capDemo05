@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public enum quest_List
-{
-    none = 0,
-    start = 1,
-    first_Mission = 2,
-    second_Mission = 3
-    //...등등
-}
+
 
 [System.Serializable]
 public class PlayerData
@@ -20,7 +13,7 @@ public class PlayerData
     public PlayerData()
     {
         location = new Vector3(0, 0, 0);
-        quest = (int)quest_List.none;
+        quest = (int)questList.quest_List.none;
     }
 }
 public class dataManager : MonoBehaviour
@@ -66,10 +59,8 @@ public class dataManager : MonoBehaviour
             Debug.Log("저장된 데이터 없음!");
         }
     }
-    private void Update()
-    {
-        Debug.Log(path);
-    }
+
+
     //매개변수 enum quest_List에서 넘기기
     public void update_Quest(int quest)
     {
