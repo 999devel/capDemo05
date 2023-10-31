@@ -22,7 +22,7 @@ public class DiaryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("e") && questShow == true)
+        if(Input.GetKeyDown(KeyCode.Space) && questShow == true)
         {
             book.active = false;
         }
