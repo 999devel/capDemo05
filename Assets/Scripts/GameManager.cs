@@ -5,16 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-
     public GameObject enterVillageScenePanel;
     public GameObject House_Collider_Door;
     public GameObject House_Collider2;
     public GameObject Village_PatrolGuideUIPanel;
     public GameObject[] Village_Walls;
     public GameObject[] Village_Doors;
-
-
+    public GameObject entryWall;
+    public static int village_Count = 0;
 
     public void EnterHouse()
     {
@@ -26,21 +24,15 @@ public class GameManager : MonoBehaviour
     public void EnterVillageScene()
     {
         SceneManager.LoadScene("Village");
+        village_Count = 1;
     }
 
     public void Day2EnterVillageScene()
     {
         SceneManager.LoadScene("Village");
-        Village_PatrolGuideUIPanel.SetActive(true);
-        for (int i = 0; i < Village_Walls.Length; i++)
-        {
-            Village_Walls[i].SetActive(false);
-        }
-        for (int i = 0; i < Village_Doors.Length; i++)
-        {
-            Village_Doors[i].SetActive(true);
-        }
+        village_Count = 2;
     }
+
 
     public void CloseEnterVillageSceneButtonPanel()
     {

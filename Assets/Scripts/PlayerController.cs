@@ -16,13 +16,21 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Camera playerCamera;
     private float rotationX = 0.0f;
+    private GameObject player;
+    private GameObject outPoint_House;
 
+    public void teleportHouse()
+    {
+        player.transform.SetPositionAndRotation(outPoint_House.transform.position,
+            outPoint_House.transform.rotation);
+    }
 
     void Start()
     { 
         rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
-
+        player = GameObject.FindWithTag("Player");
+        outPoint_House = GameObject.Find("outPoint_House");
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
