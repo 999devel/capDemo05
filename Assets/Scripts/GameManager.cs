@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
+
     public GameObject enterVillageScenePanel;
     public GameObject House_Collider_Door;
     public GameObject House_Collider2;
     public GameObject Village_PatrolGuideUIPanel;
     public GameObject[] Village_Walls;
     public GameObject[] Village_Doors;
+
+
 
     public void EnterHouse()
     {
