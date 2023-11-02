@@ -6647,7 +6647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1456286457
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9574,8 +9574,8 @@ MonoBehaviour:
     luaWizardIndex: -1
     lastEvaluationValue: 0
   setQuestState: 1
-  questName: 
-  questState: 0
+  questName: "\uD018\uC2A4\uD2B8 1 : 1\uC77C\uCC28 \uC21C\uCC30"
+  questState: 2
   setQuestEntryState: 0
   questEntryNumber: 1
   questEntryState: 0
