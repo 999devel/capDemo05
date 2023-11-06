@@ -19,22 +19,22 @@ public class PlayerController : MonoBehaviour
     private GameObject player;
     private GameObject outPoint_House;
 
-    private void Awake()
-    {
-        // 씬 이동 시 player 오브젝트 유지(village <-> house 이동 시 위치 저장 위함)
-        DontDestroyOnLoad(gameObject);
+    //private void Awake()
+    //{
+    //    // 씬 이동 시 player 오브젝트 유지(village <-> house 이동 시 위치 저장 위함)
+    //    DontDestroyOnLoad(gameObject);
 
-        // player 오브젝트 중복 생성 방지
-        var obj = FindObjectsOfType<PlayerController>();
-        if (obj.Length == 1)
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    //    // player 오브젝트 중복 생성 방지
+    //    var obj = FindObjectsOfType<PlayerController>();
+    //    if (obj.Length == 1)
+    //    {
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     public void teleportHouse()
     {

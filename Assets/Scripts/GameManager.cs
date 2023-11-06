@@ -14,24 +14,43 @@ public class GameManager : MonoBehaviour
     public GameObject entryWall;
     public static int village_Count = 0;
 
-    public void EnterHouse()
+    public Transform playerPos;
+
+    public Transform outOfHousePoint;
+    public Transform IntoHousePoint;
+
+    public Transform outOfForestPoint;
+    public Transform IntoForestPoint;
+
+    public void MovePlayerVillageToHouse()
     {
-        SceneManager.LoadScene("House");
-        House_Collider_Door.SetActive(false);
-        House_Collider2.SetActive(true);
+        playerPos.position = IntoHousePoint.position;
+        playerPos.rotation = IntoHousePoint.rotation;
     }
 
-    public void EnterVillageScene()
+    public void MovePlayerHouseToVillage()
     {
-        SceneManager.LoadScene("Village");
-        village_Count = 1;
+        playerPos.position = outOfHousePoint.position;
+        playerPos.rotation = outOfHousePoint.rotation;
+        //village_Count = 1;
+    }
+    public void MovePlayerVillageToForest()
+    {
+        playerPos.position = IntoForestPoint.position;
+        playerPos.rotation = IntoForestPoint.rotation;
     }
 
-    public void Day2EnterVillageScene()
+    public void MovePlayerForestToVillage()
     {
-        SceneManager.LoadScene("Village");
-        village_Count = 2;
+        playerPos.position = outOfForestPoint.position;
+        playerPos.rotation = outOfForestPoint.rotation;
     }
+
+
+    //public void Day2EnterVillageScene()
+    //{
+    //    village_Count = 2;
+    //}
 
 
     public void CloseEnterVillageSceneButtonPanel()
@@ -39,8 +58,4 @@ public class GameManager : MonoBehaviour
         enterVillageScenePanel.SetActive(false);
     }
 
-    public void EnterForest()
-    {
-        SceneManager.LoadScene("Forest");
-    }
 }
