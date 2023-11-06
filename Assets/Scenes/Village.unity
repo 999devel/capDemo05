@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1146362}
   m_Layer: 0
-  m_Name: GameObject (7)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15638646}
   m_Layer: 0
-  m_Name: GameObject (12)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 31099621}
   - component: {fileID: 31099620}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 39202274}
   - component: {fileID: 39202273}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (20)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 45639977}
   - component: {fileID: 45639976}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (9)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1285,7 +1285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65152503}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1321,7 +1321,7 @@ GameObject:
   - component: {fileID: 67924568}
   - component: {fileID: 67924567}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (16)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 72641380}
   - component: {fileID: 72641379}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (10)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1814,7 +1814,7 @@ GameObject:
   - component: {fileID: 108867281}
   - component: {fileID: 108867280}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2931,8 +2931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 517.2461, y: 0}
-  m_SizeDelta: {x: 1034.4922, y: 0}
+  m_AnchoredPosition: {x: 496.4662, y: 0}
+  m_SizeDelta: {x: 992.9324, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &161606361
 MonoBehaviour:
@@ -3928,7 +3928,6 @@ Transform:
   - {fileID: 1510474911}
   - {fileID: 1053786330}
   - {fileID: 1077683093}
-  - {fileID: 314057414}
   - {fileID: 399506584}
   - {fileID: 1107850901}
   - {fileID: 736015062486970754}
@@ -3941,16 +3940,13 @@ Transform:
   - {fileID: 1813556542}
   - {fileID: 261857900}
   - {fileID: 638242099}
-  - {fileID: 578445741}
   - {fileID: 1235105203}
   - {fileID: 1536763408}
   - {fileID: 543450652434746901}
   - {fileID: 6545009386280155435}
   - {fileID: 5426383423718031069}
-  - {fileID: 1105749416}
-  - {fileID: 270534125}
-  - {fileID: 1876361773}
   - {fileID: 928300819}
+  - {fileID: 475997182}
   - {fileID: 1933340952}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -4189,7 +4185,7 @@ GameObject:
   - component: {fileID: 223066854}
   - component: {fileID: 223066853}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (21)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4419,7 +4415,7 @@ GameObject:
   - component: {fileID: 244153485}
   - component: {fileID: 244153484}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (41)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5031,7 +5027,7 @@ Transform:
   - {fileID: 1032215839}
   - {fileID: 1718053722}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266497495
 GameObject:
@@ -5143,12 +5139,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270534124}
   m_LocalRotation: {x: -0, y: -0.7085075, z: -0, w: 0.7057033}
-  m_LocalPosition: {x: 102.04, y: 30.5, z: -152.77}
-  m_LocalScale: {x: 1, y: 1, z: 6.526179}
+  m_LocalPosition: {x: 128.99, y: 30, z: -170.71}
+  m_LocalScale: {x: 1, y: 1, z: 6.526178}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 209800825}
-  m_RootOrder: 25
+  m_Father: {fileID: 475997182}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90.227, z: 0}
 --- !u!114 &270534126
 MonoBehaviour:
@@ -5632,7 +5628,7 @@ GameObject:
   - component: {fileID: 276561953}
   - component: {fileID: 276561952}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5927,7 +5923,7 @@ GameObject:
   - component: {fileID: 294247275}
   - component: {fileID: 294247274}
   m_Layer: 0
-  m_Name: StoneThatchedWallAR (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6038,12 +6034,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314057413}
   m_LocalRotation: {x: -0, y: -0, z: 0.010543582, w: 0.99994445}
-  m_LocalPosition: {x: -25.55, y: 0.5, z: 18.16}
-  m_LocalScale: {x: 0.7000001, y: 1, z: 0.7}
+  m_LocalPosition: {x: 1.4000015, y: 0, z: 0.21999931}
+  m_LocalScale: {x: 0.7000002, y: 1, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 209800825}
-  m_RootOrder: 5
+  m_Father: {fileID: 475997182}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &323291681
 MeshCollider:
@@ -7322,7 +7318,7 @@ GameObject:
   - component: {fileID: 384571885}
   - component: {fileID: 384571884}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (35)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7422,7 +7418,7 @@ GameObject:
   - component: {fileID: 384951277}
   - component: {fileID: 384951276}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7697,7 +7693,7 @@ Transform:
   m_Children:
   - {fileID: 1650185931}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.208}
 --- !u!114 &399506585
 MonoBehaviour:
@@ -7759,7 +7755,7 @@ GameObject:
   - component: {fileID: 400381661}
   - component: {fileID: 400381660}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8360,7 +8356,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209800825}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &419886865
 GameObject:
@@ -8478,7 +8474,7 @@ GameObject:
   - component: {fileID: 422516060}
   - component: {fileID: 422516059}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (24)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8642,7 +8638,7 @@ GameObject:
   - component: {fileID: 436518926}
   - component: {fileID: 436518925}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (22)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9013,7 +9009,7 @@ GameObject:
   - component: {fileID: 448334702}
   - component: {fileID: 448334701}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (17)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9575,6 +9571,41 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2253418758751981110, guid: 73e03d655c41e8b4494fb72b339d6f2e, type: 3}
+--- !u!1 &475997181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475997182}
+  m_Layer: 0
+  m_Name: OutSideDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &475997182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475997181}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.95, y: 0.5, z: 17.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 314057414}
+  - {fileID: 1105749416}
+  - {fileID: 270534125}
+  - {fileID: 1876361773}
+  m_Father: {fileID: 209800825}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &479999553
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9865,7 +9896,7 @@ GameObject:
   - component: {fileID: 505645187}
   - component: {fileID: 505645186}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (14)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10148,7 +10179,7 @@ GameObject:
   - component: {fileID: 520778587}
   - component: {fileID: 520778586}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10785,7 +10816,7 @@ GameObject:
   - component: {fileID: 572339771}
   - component: {fileID: 572339770}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (31)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10980,7 +11011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 577561172}
   m_Layer: 0
-  m_Name: GameObject (5)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11015,7 +11046,7 @@ GameObject:
   - component: {fileID: 578445740}
   - component: {fileID: 578445739}
   m_Layer: 0
-  m_Name: Village Terrain
+  m_Name: wrongWayOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11074,12 +11105,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578445738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -100, y: -5, z: -100}
+  m_LocalPosition: {x: -95.2082, y: -6.078797, z: -104.96125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 209800825}
-  m_RootOrder: 18
+  m_Father: {fileID: 1933340952}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &579385519
 PrefabInstance:
@@ -11371,7 +11402,7 @@ GameObject:
   - component: {fileID: 601684897}
   - component: {fileID: 601684896}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (38)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11857,7 +11888,7 @@ GameObject:
   - component: {fileID: 632001272}
   - component: {fileID: 632001271}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (11)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11957,7 +11988,7 @@ GameObject:
   - component: {fileID: 632566875}
   - component: {fileID: 632566874}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12140,7 +12171,7 @@ GameObject:
   - component: {fileID: 634899684}
   - component: {fileID: 634899683}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (23)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12240,7 +12271,7 @@ GameObject:
   - component: {fileID: 635512310}
   - component: {fileID: 635512309}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (18)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12424,7 +12455,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209800825}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: -18.156, z: 0}
 --- !u!114 &638242100
 MonoBehaviour:
@@ -12939,7 +12970,7 @@ GameObject:
   - component: {fileID: 667863005}
   - component: {fileID: 667863004}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (9)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13039,7 +13070,7 @@ GameObject:
   - component: {fileID: 671261414}
   - component: {fileID: 671261413}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (15)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14901,7 +14932,7 @@ GameObject:
   - component: {fileID: 723343363}
   - component: {fileID: 723343362}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (12)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15366,7 +15397,7 @@ GameObject:
   - component: {fileID: 736219166}
   - component: {fileID: 736219165}
   m_Layer: 0
-  m_Name: StoneThatchedWallAR (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15821,7 +15852,7 @@ GameObject:
   - component: {fileID: 755865819}
   - component: {fileID: 755865818}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (18)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16081,7 +16112,7 @@ GameObject:
   - component: {fileID: 790679334}
   - component: {fileID: 790679333}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16264,7 +16295,7 @@ GameObject:
   - component: {fileID: 796266330}
   - component: {fileID: 796266329}
   m_Layer: 0
-  m_Name: StoneWall01
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16448,7 +16479,7 @@ GameObject:
   - component: {fileID: 807049044}
   - component: {fileID: 807049043}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (10)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16708,7 +16739,7 @@ GameObject:
   - component: {fileID: 832440395}
   - component: {fileID: 832440394}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17154,7 +17185,7 @@ GameObject:
   - component: {fileID: 861494731}
   - component: {fileID: 861494730}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17299,7 +17330,7 @@ GameObject:
   - component: {fileID: 870766332}
   - component: {fileID: 870766331}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (32)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17918,7 +17949,7 @@ GameObject:
   - component: {fileID: 911657886}
   - component: {fileID: 911657885}
   m_Layer: 0
-  m_Name: wallex (1)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18676,7 +18707,7 @@ Transform:
   m_Children:
   - {fileID: 1663519669}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 27
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: -23.014, z: 0}
 --- !u!114 &928300820
 MonoBehaviour:
@@ -19001,7 +19032,7 @@ GameObject:
   - component: {fileID: 955274310}
   - component: {fileID: 955274309}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19133,7 +19164,7 @@ GameObject:
   - component: {fileID: 960180397}
   - component: {fileID: 960180396}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (33)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19531,7 +19562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976980113}
   m_Layer: 0
-  m_Name: GameObject (10)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19567,7 +19598,7 @@ GameObject:
   - component: {fileID: 980419684}
   - component: {fileID: 980419683}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (37)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20053,14 +20084,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996620548}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -1469.41, y: 30.5, z: 1640}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 507054755}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1003971014
 GameObject:
   m_ObjectHideFlags: 0
@@ -20233,7 +20264,7 @@ GameObject:
   - component: {fileID: 1022845072}
   - component: {fileID: 1022845071}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (52)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20490,7 +20521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029404159}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20706,7 +20737,7 @@ GameObject:
   - component: {fileID: 1032937694}
   - component: {fileID: 1032937693}
   m_Layer: 0
-  m_Name: StoneThatchedWallAR (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20806,7 +20837,7 @@ GameObject:
   - component: {fileID: 1037105312}
   - component: {fileID: 1037105311}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21106,7 +21137,7 @@ GameObject:
   - component: {fileID: 1045059603}
   - component: {fileID: 1045059602}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (20)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21377,7 +21408,7 @@ GameObject:
   - component: {fileID: 1048638056}
   - component: {fileID: 1048638055}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (10)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21575,7 +21606,7 @@ GameObject:
   - component: {fileID: 1052792387}
   - component: {fileID: 1052792386}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (25)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21720,7 +21751,7 @@ GameObject:
   - component: {fileID: 1058454501}
   - component: {fileID: 1058454500}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (14)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21937,7 +21968,7 @@ GameObject:
   - component: {fileID: 1065181762}
   - component: {fileID: 1065181761}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22351,7 +22382,7 @@ GameObject:
   - component: {fileID: 1082405524}
   - component: {fileID: 1082405523}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (39)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22519,7 +22550,7 @@ GameObject:
   - component: {fileID: 1085088571}
   - component: {fileID: 1085088570}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22702,7 +22733,7 @@ GameObject:
   - component: {fileID: 1088083329}
   - component: {fileID: 1088083328}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (45)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22802,7 +22833,7 @@ GameObject:
   - component: {fileID: 1089090217}
   - component: {fileID: 1089090216}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22941,7 +22972,7 @@ GameObject:
   - component: {fileID: 1094015661}
   - component: {fileID: 1094015660}
   m_Layer: 0
-  m_Name: StoneThatchedWallAL (1)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23280,7 +23311,7 @@ GameObject:
   - component: {fileID: 1104150159}
   - component: {fileID: 1104150158}
   m_Layer: 0
-  m_Name: wallex (1)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23463,12 +23494,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105749415}
   m_LocalRotation: {x: -0, y: 0.029112501, z: -0, w: 0.99957615}
-  m_LocalPosition: {x: -30.02, y: 0.6558596, z: 18.079998}
-  m_LocalScale: {x: 1, y: 1, z: 6.526179}
+  m_LocalPosition: {x: -3.0699997, y: 0.15585959, z: 0.13999748}
+  m_LocalScale: {x: 1, y: 1, z: 6.5261807}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 209800825}
-  m_RootOrder: 24
+  m_Father: {fileID: 475997182}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 3.337, z: 0}
 --- !u!114 &1105749417
 MonoBehaviour:
@@ -23909,7 +23940,7 @@ Transform:
   - {fileID: 75348653}
   - {fileID: 812508675}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -359.402, z: 0}
 --- !u!54 &1107850902
 Rigidbody:
@@ -24356,7 +24387,7 @@ GameObject:
   - component: {fileID: 1110402817}
   - component: {fileID: 1110402816}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (40)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24456,7 +24487,7 @@ GameObject:
   - component: {fileID: 1112065064}
   - component: {fileID: 1112065063}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25041,7 +25072,7 @@ GameObject:
   - component: {fileID: 1134446379}
   - component: {fileID: 1134446378}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (16)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25141,7 +25172,7 @@ GameObject:
   - component: {fileID: 1140011162}
   - component: {fileID: 1140011161}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25421,7 +25452,7 @@ GameObject:
   - component: {fileID: 1144233190}
   - component: {fileID: 1144233189}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (27)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25604,7 +25635,7 @@ GameObject:
   - component: {fileID: 1146215972}
   - component: {fileID: 1146215971}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25940,7 +25971,7 @@ GameObject:
   - component: {fileID: 1161009576}
   - component: {fileID: 1161009575}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26244,7 +26275,7 @@ GameObject:
   - component: {fileID: 1175962878}
   - component: {fileID: 1175962877}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26388,7 +26419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1196676126}
   m_Layer: 0
-  m_Name: GameObject (11)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27436,7 +27467,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209800825}
-  m_RootOrder: 19
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1236634822
 PrefabInstance:
@@ -27589,7 +27620,7 @@ GameObject:
   - component: {fileID: 1257812545}
   - component: {fileID: 1257812544}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (28)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28015,7 +28046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1275625953}
   m_Layer: 0
-  m_Name: GameObject (9)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28051,7 +28082,7 @@ GameObject:
   - component: {fileID: 1276324479}
   - component: {fileID: 1276324478}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (9)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28324,7 +28355,7 @@ GameObject:
   - component: {fileID: 1290016022}
   - component: {fileID: 1290016021}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (13)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28424,7 +28455,7 @@ GameObject:
   - component: {fileID: 1297306676}
   - component: {fileID: 1297306675}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (22)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28802,7 +28833,7 @@ GameObject:
   - component: {fileID: 1320813754}
   - component: {fileID: 1320813753}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (46)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29206,7 +29237,7 @@ GameObject:
   - component: {fileID: 1341935715}
   - component: {fileID: 1341935714}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (51)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29455,7 +29486,7 @@ GameObject:
   - component: {fileID: 1361814573}
   - component: {fileID: 1361814572}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (17)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29881,7 +29912,7 @@ GameObject:
   - component: {fileID: 1375109524}
   - component: {fileID: 1375109523}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30103,7 +30134,7 @@ GameObject:
   - component: {fileID: 1378846617}
   - component: {fileID: 1378846616}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (48)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30203,7 +30234,7 @@ GameObject:
   - component: {fileID: 1379186510}
   - component: {fileID: 1379186509}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30386,7 +30417,7 @@ GameObject:
   - component: {fileID: 1380794701}
   - component: {fileID: 1380794700}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30486,7 +30517,7 @@ GameObject:
   - component: {fileID: 1386741925}
   - component: {fileID: 1386741924}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (34)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30756,7 +30787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1406044094}
   m_Layer: 0
-  m_Name: GameObject (13)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30769,8 +30800,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406044093}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.24, y: -0.69, z: 14.07}
+  m_LocalRotation: {x: 0.30182138, y: -0.21688251, z: 0.20199631, w: 0.9061255}
+  m_LocalPosition: {x: -13.631273, y: -0.9830364, z: 14.152933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30778,7 +30809,7 @@ Transform:
   - {fileID: 246484479}
   m_Father: {fileID: 1053786330}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 39.39, y: -20.536, z: 17.714}
 --- !u!1 &1413733648
 GameObject:
   m_ObjectHideFlags: 0
@@ -30943,7 +30974,7 @@ GameObject:
   - component: {fileID: 1430240018}
   - component: {fileID: 1430240017}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31043,7 +31074,7 @@ GameObject:
   - component: {fileID: 1431768704}
   - component: {fileID: 1431768703}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31143,7 +31174,7 @@ GameObject:
   - component: {fileID: 1432053435}
   - component: {fileID: 1432053434}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (49)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31421,7 +31452,7 @@ GameObject:
   - component: {fileID: 1445232568}
   - component: {fileID: 1445232567}
   m_Layer: 0
-  m_Name: Block Collider
+  m_Name: OutsideDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31468,7 +31499,7 @@ GameObject:
   - component: {fileID: 1450780113}
   - component: {fileID: 1450780112}
   m_Layer: 0
-  m_Name: StoneThatchedWallAR (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32534,7 +32565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1497224338}
   m_Layer: 0
-  m_Name: GameObject (4)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33056,7 +33087,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209800825}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 42.442, y: 56.281, z: 56.4}
 --- !u!114 &1536763409
 MonoBehaviour:
@@ -33083,7 +33114,7 @@ GameObject:
   - component: {fileID: 1537612341}
   - component: {fileID: 1537612340}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33254,7 +33285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544975082}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33290,7 +33321,7 @@ GameObject:
   - component: {fileID: 1547328843}
   - component: {fileID: 1547328842}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (11)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33774,7 +33805,7 @@ GameObject:
   - component: {fileID: 1576035700}
   - component: {fileID: 1576035699}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33874,7 +33905,7 @@ GameObject:
   - component: {fileID: 1577971559}
   - component: {fileID: 1577971558}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (50)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34000,8 +34031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 517.2461, y: 0}
-  m_SizeDelta: {x: 1034.4922, y: 0}
+  m_AnchoredPosition: {x: 496.4662, y: 0}
+  m_SizeDelta: {x: 992.9324, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1579266905
 MonoBehaviour:
@@ -34746,7 +34777,7 @@ GameObject:
   - component: {fileID: 1611716656}
   - component: {fileID: 1611716655}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35024,7 +35055,7 @@ Transform:
   - {fileID: 5312481317492336302}
   - {fileID: 5528857247280097046}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1624318996
 MeshCollider:
@@ -35067,7 +35098,7 @@ GameObject:
   - component: {fileID: 1637056847}
   - component: {fileID: 1637056846}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (15)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35622,7 +35653,7 @@ GameObject:
   - component: {fileID: 1654560972}
   - component: {fileID: 1654560971}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (42)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36046,7 +36077,7 @@ GameObject:
   - component: {fileID: 1665393459}
   - component: {fileID: 1665393458}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (21)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36329,7 +36360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1681942784}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36580,7 +36611,7 @@ GameObject:
   - component: {fileID: 1704750161}
   - component: {fileID: 1704750160}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (23)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37015,7 +37046,7 @@ Transform:
   - {fileID: 5730061067324288893}
   - {fileID: 5730061065622727408}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1734111584
 GameObject:
@@ -37297,7 +37328,7 @@ GameObject:
   - component: {fileID: 1750201002}
   - component: {fileID: 1750201001}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37613,7 +37644,7 @@ GameObject:
   - component: {fileID: 1757496733}
   - component: {fileID: 1757496732}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (26)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37713,7 +37744,7 @@ GameObject:
   - component: {fileID: 1759731601}
   - component: {fileID: 1759731600}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38251,7 +38282,7 @@ GameObject:
   - component: {fileID: 1801917405}
   - component: {fileID: 1801917404}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38614,7 +38645,7 @@ Transform:
   - {fileID: 1464820136}
   - {fileID: 150619635}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!144 &1816465525
 CharacterJoint:
@@ -39053,7 +39084,7 @@ GameObject:
   - component: {fileID: 1849282006}
   - component: {fileID: 1849282005}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39153,7 +39184,7 @@ GameObject:
   - component: {fileID: 1850607796}
   - component: {fileID: 1850607795}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39267,7 +39298,7 @@ GameObject:
   - component: {fileID: 1860692423}
   - component: {fileID: 1860692422}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (44)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39464,7 +39495,7 @@ GameObject:
   - component: {fileID: 1871354853}
   - component: {fileID: 1871354852}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39575,12 +39606,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876361772}
   m_LocalRotation: {x: -0, y: 0.020375898, z: -0, w: 0.9997924}
-  m_LocalPosition: {x: -26.95, y: 0.5, z: 17.94}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 6.526178}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 209800825}
-  m_RootOrder: 26
+  m_Father: {fileID: 475997182}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 2.335, z: 0}
 --- !u!1001 &1884496957
 PrefabInstance:
@@ -39838,7 +39869,7 @@ GameObject:
   - component: {fileID: 1895549118}
   - component: {fileID: 1895549117}
   m_Layer: 0
-  m_Name: StoneWall01 (1)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39936,7 +39967,7 @@ GameObject:
   - component: {fileID: 1896223757}
   - component: {fileID: 1896223756}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (9)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40441,7 +40472,7 @@ GameObject:
   - component: {fileID: 1905056975}
   - component: {fileID: 1905056974}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40538,7 +40569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1905781164}
   m_Layer: 0
-  m_Name: GameObject (8)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41162,8 +41193,9 @@ Transform:
   m_Children:
   - {fileID: 1638996067}
   - {fileID: 47715673}
+  - {fileID: 578445741}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 28
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1933340953
 MonoBehaviour:
@@ -41190,7 +41222,7 @@ GameObject:
   - component: {fileID: 1946218558}
   - component: {fileID: 1946218557}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41637,7 +41669,7 @@ GameObject:
   - component: {fileID: 1965884698}
   - component: {fileID: 1965884697}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (19)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41908,7 +41940,7 @@ GameObject:
   - component: {fileID: 1976124599}
   - component: {fileID: 1976124598}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42368,7 +42400,7 @@ GameObject:
   - component: {fileID: 2006822197}
   - component: {fileID: 2006822196}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (36)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42542,7 +42574,7 @@ GameObject:
   - component: {fileID: 2011885431}
   - component: {fileID: 2011885430}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (10)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42753,7 +42785,7 @@ GameObject:
   - component: {fileID: 2022060956}
   - component: {fileID: 2022060955}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (21)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43165,7 +43197,7 @@ GameObject:
   - component: {fileID: 2057877859}
   - component: {fileID: 2057877858}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (19)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43293,7 +43325,7 @@ GameObject:
   - component: {fileID: 2064415152}
   - component: {fileID: 2064415151}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43390,7 +43422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2067095919}
   m_Layer: 0
-  m_Name: GameObject (6)
+  m_Name: ToarchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43831,7 +43863,7 @@ GameObject:
   - component: {fileID: 2082448452}
   - component: {fileID: 2082448451}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (43)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43931,7 +43963,7 @@ GameObject:
   - component: {fileID: 2085639355}
   - component: {fileID: 2085639354}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (20)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44125,14 +44157,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102012288}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -19.34, y: 0.5, z: 13.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209800825}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105902033
 GameObject:
   m_ObjectHideFlags: 0
@@ -44146,7 +44178,7 @@ GameObject:
   - component: {fileID: 2105902036}
   - component: {fileID: 2105902035}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44246,7 +44278,7 @@ GameObject:
   - component: {fileID: 2108149033}
   - component: {fileID: 2108149032}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (21)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45034,7 +45066,7 @@ GameObject:
   - component: {fileID: 2132706533}
   - component: {fileID: 2132706532}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45813,7 +45845,7 @@ GameObject:
   - component: {fileID: 2147328742}
   - component: {fileID: 2147328741}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (47)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47883,7 +47915,7 @@ Transform:
   - {fileID: 7679939170030103080}
   - {fileID: 4051441578516665026}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652434746901
 Transform:
@@ -47900,7 +47932,7 @@ Transform:
   - {fileID: 2542217035492676680}
   - {fileID: 3791641289904079925}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &552601945046222309
 GameObject:
@@ -50829,7 +50861,7 @@ Transform:
   - {fileID: 736015061655079159}
   - {fileID: 736015062101069352}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &736015062486970755
 GameObject:
@@ -60759,7 +60791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889270689244133733}
   m_Layer: 0
-  m_Name: ThatchedHouseCC_Platform (1)
+  m_Name: House
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61906,7 +61938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3393212611355121840}
   m_Layer: 0
-  m_Name: ThatchedHouseA
+  m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68353,7 +68385,7 @@ GameObject:
   - component: {fileID: 2689904136691981098}
   - component: {fileID: 831107881}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68372,7 +68404,7 @@ GameObject:
   - component: {fileID: 2689904136740198682}
   - component: {fileID: 883454233}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (16)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68391,7 +68423,7 @@ GameObject:
   - component: {fileID: 2689904136749275993}
   - component: {fileID: 874771288}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68410,7 +68442,7 @@ GameObject:
   - component: {fileID: 2689904136829536444}
   - component: {fileID: 964468915}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68429,7 +68461,7 @@ GameObject:
   - component: {fileID: 2689904136857395864}
   - component: {fileID: 1070959255}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (21)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68448,7 +68480,7 @@ GameObject:
   - component: {fileID: 2689904136863355196}
   - component: {fileID: 1064352051}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (9)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68467,7 +68499,7 @@ GameObject:
   - component: {fileID: 2689904136941841199}
   - component: {fileID: 548209446}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68486,7 +68518,7 @@ GameObject:
   - component: {fileID: 2689904137001004021}
   - component: {fileID: 656720892}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68505,7 +68537,7 @@ GameObject:
   - component: {fileID: 2689904136996577530}
   - component: {fileID: 660621561}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (12)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68524,7 +68556,7 @@ GameObject:
   - component: {fileID: 2689904136971986097}
   - component: {fileID: 653855936}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68543,7 +68575,7 @@ GameObject:
   - component: {fileID: 2689904136982045062}
   - component: {fileID: 641960333}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (29)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68562,7 +68594,7 @@ GameObject:
   - component: {fileID: 2689904137036946129}
   - component: {fileID: 622359264}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68581,7 +68613,7 @@ GameObject:
   - component: {fileID: 2689904137072705717}
   - component: {fileID: 687483068}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (10)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68600,7 +68632,7 @@ GameObject:
   - component: {fileID: 2689904137074140352}
   - component: {fileID: 683723983}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (23)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68619,7 +68651,7 @@ GameObject:
   - component: {fileID: 2689904137112616780}
   - component: {fileID: 781965123}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (17)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68638,7 +68670,7 @@ GameObject:
   - component: {fileID: 2689904137118038721}
   - component: {fileID: 774804176}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (19)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68657,7 +68689,7 @@ GameObject:
   - component: {fileID: 2689904137154394938}
   - component: {fileID: 739791673}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (28)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68676,7 +68708,7 @@ GameObject:
   - component: {fileID: 2689904137200312850}
   - component: {fileID: 323291681}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (22)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68695,7 +68727,7 @@ GameObject:
   - component: {fileID: 2689904137237447717}
   - component: {fileID: 286059564}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (17)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68714,7 +68746,7 @@ GameObject:
   - component: {fileID: 2689904137205710919}
   - component: {fileID: 283682894}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (30)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68733,7 +68765,7 @@ GameObject:
   - component: {fileID: 2689904137267216038}
   - component: {fileID: 390256301}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68752,7 +68784,7 @@ GameObject:
   - component: {fileID: 2689904137240337596}
   - component: {fileID: 385414323}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68771,7 +68803,7 @@ GameObject:
   - component: {fileID: 2689904137296829236}
   - component: {fileID: 361165627}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68790,7 +68822,7 @@ GameObject:
   - component: {fileID: 2689904137376371176}
   - component: {fileID: 516209127}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68809,7 +68841,7 @@ GameObject:
   - component: {fileID: 2689904137414680114}
   - component: {fileID: 479999553}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (11)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68828,7 +68860,7 @@ GameObject:
   - component: {fileID: 2689904137409414823}
   - component: {fileID: 483192494}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68847,7 +68879,7 @@ GameObject:
   - component: {fileID: 2689904137423208500}
   - component: {fileID: 471754811}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (19)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68866,7 +68898,7 @@ GameObject:
   - component: {fileID: 2689904137473112917}
   - component: {fileID: 51942236}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (25)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68885,7 +68917,7 @@ GameObject:
   - component: {fileID: 2689904137476215095}
   - component: {fileID: 16202046}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68904,7 +68936,7 @@ GameObject:
   - component: {fileID: 2689904137527047045}
   - component: {fileID: 131046284}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (21)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68923,7 +68955,7 @@ GameObject:
   - component: {fileID: 2689904137540956160}
   - component: {fileID: 118741007}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68942,7 +68974,7 @@ GameObject:
   - component: {fileID: 2689904137514393839}
   - component: {fileID: 110004454}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (22)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68961,7 +68993,7 @@ GameObject:
   - component: {fileID: 2689904137565358842}
   - component: {fileID: 92758777}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68980,7 +69012,7 @@ GameObject:
   - component: {fileID: 2689904137575652614}
   - component: {fileID: 182744333}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (16)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68999,7 +69031,7 @@ GameObject:
   - component: {fileID: 2689904137586392275}
   - component: {fileID: 173544674}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (23)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69018,7 +69050,7 @@ GameObject:
   - component: {fileID: 2689904137629124966}
   - component: {fileID: 164913517}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69037,7 +69069,7 @@ GameObject:
   - component: {fileID: 2689904137610394974}
   - component: {fileID: 150361429}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (9)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69056,7 +69088,7 @@ GameObject:
   - component: {fileID: 2689904137669382912}
   - component: {fileID: 256621327}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69075,7 +69107,7 @@ GameObject:
   - component: {fileID: 2689904137656740126}
   - component: {fileID: 235569429}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69094,7 +69126,7 @@ GameObject:
   - component: {fileID: 2689904137657485333}
   - component: {fileID: 235216924}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (13)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69113,7 +69145,7 @@ GameObject:
   - component: {fileID: 2689904137707582309}
   - component: {fileID: 218192748}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (15)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69132,7 +69164,7 @@ GameObject:
   - component: {fileID: 2689904137679113871}
   - component: {fileID: 215950982}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69151,7 +69183,7 @@ GameObject:
   - component: {fileID: 2689904137741459321}
   - component: {fileID: 1929803640}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (14)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69170,7 +69202,7 @@ GameObject:
   - component: {fileID: 2689904137715789080}
   - component: {fileID: 1922008343}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (20)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69189,7 +69221,7 @@ GameObject:
   - component: {fileID: 2689904137773928400}
   - component: {fileID: 1899423711}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69208,7 +69240,7 @@ GameObject:
   - component: {fileID: 2689904137750788570}
   - component: {fileID: 1888850393}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (15)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69227,7 +69259,7 @@ GameObject:
   - component: {fileID: 2689904137776452629}
   - component: {fileID: 1995209756}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69246,7 +69278,7 @@ GameObject:
   - component: {fileID: 2689904137836964010}
   - component: {fileID: 1967685801}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69265,7 +69297,7 @@ GameObject:
   - component: {fileID: 2689904137814219892}
   - component: {fileID: 1957540987}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69284,7 +69316,7 @@ GameObject:
   - component: {fileID: 2689904137864871909}
   - component: {fileID: 2074171372}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (23)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69303,7 +69335,7 @@ GameObject:
   - component: {fileID: 2689904137847743743}
   - component: {fileID: 2058095862}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69322,7 +69354,7 @@ GameObject:
   - component: {fileID: 2689904137902924801}
   - component: {fileID: 2036730896}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69341,7 +69373,7 @@ GameObject:
   - component: {fileID: 2689904137876829244}
   - component: {fileID: 2028526643}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (20)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69360,7 +69392,7 @@ GameObject:
   - component: {fileID: 2689904137890286093}
   - component: {fileID: 2015715844}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69379,7 +69411,7 @@ GameObject:
   - component: {fileID: 2689904137888313414}
   - component: {fileID: 2017925197}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (9)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69398,7 +69430,7 @@ GameObject:
   - component: {fileID: 2689904137929981265}
   - component: {fileID: 2143540576}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69417,7 +69449,7 @@ GameObject:
   - component: {fileID: 2689904137940349446}
   - component: {fileID: 2132875789}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (19)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69436,7 +69468,7 @@ GameObject:
   - component: {fileID: 2689904137962026825}
   - component: {fileID: 2113724232}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69455,7 +69487,7 @@ GameObject:
   - component: {fileID: 2689904138033129326}
   - component: {fileID: 1639567205}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69474,7 +69506,7 @@ GameObject:
   - component: {fileID: 2689904138042284199}
   - component: {fileID: 1630908590}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (27)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69493,7 +69525,7 @@ GameObject:
   - component: {fileID: 2689904138014788637}
   - component: {fileID: 1624318996}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69512,7 +69544,7 @@ GameObject:
   - component: {fileID: 2689904138052779637}
   - component: {fileID: 1721079420}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (10)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69531,7 +69563,7 @@ GameObject:
   - component: {fileID: 2689904138099606527}
   - component: {fileID: 1705995254}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (4)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69550,7 +69582,7 @@ GameObject:
   - component: {fileID: 2689904138085606497}
   - component: {fileID: 1687850096}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (20)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69569,7 +69601,7 @@ GameObject:
   - component: {fileID: 2689904138090892076}
   - component: {fileID: 1680499491}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69606,7 +69638,7 @@ GameObject:
   - component: {fileID: 2689904138154182228}
   - component: {fileID: 1751133787}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (2)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69625,7 +69657,7 @@ GameObject:
   - component: {fileID: 2689904138156516518}
   - component: {fileID: 1749322925}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69644,7 +69676,7 @@ GameObject:
   - component: {fileID: 2689904138204751446}
   - component: {fileID: 1868861021}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69663,7 +69695,7 @@ GameObject:
   - component: {fileID: 2689904138186007032}
   - component: {fileID: 1854310903}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (31)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69682,7 +69714,7 @@ GameObject:
   - component: {fileID: 2689904138276079892}
   - component: {fileID: 1394876699}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (21)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69701,7 +69733,7 @@ GameObject:
   - component: {fileID: 2689904138251262445}
   - component: {fileID: 1387885028}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (8)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69720,7 +69752,7 @@ GameObject:
   - component: {fileID: 2689904138298083402}
   - component: {fileID: 1375002697}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69739,7 +69771,7 @@ GameObject:
   - component: {fileID: 2689904138279903337}
   - component: {fileID: 1357793384}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69758,7 +69790,7 @@ GameObject:
   - component: {fileID: 2689904138373539256}
   - component: {fileID: 1433603511}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (18)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69777,7 +69809,7 @@ GameObject:
   - component: {fileID: 2689904138387232141}
   - component: {fileID: 1518615940}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (26)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69796,7 +69828,7 @@ GameObject:
   - component: {fileID: 2689904138445618553}
   - component: {fileID: 1494209912}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (11)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69815,7 +69847,7 @@ GameObject:
   - component: {fileID: 2689904138451525305}
   - component: {fileID: 1588147896}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (14)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69834,7 +69866,7 @@ GameObject:
   - component: {fileID: 2689904138502238882}
   - component: {fileID: 1571805873}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (7)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69853,7 +69885,7 @@ GameObject:
   - component: {fileID: 2689904138481738838}
   - component: {fileID: 1558580317}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (17)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69872,7 +69904,7 @@ GameObject:
   - component: {fileID: 2689904138575440726}
   - component: {fileID: 1095549789}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (6)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69891,7 +69923,7 @@ GameObject:
   - component: {fileID: 2689904138583951099}
   - component: {fileID: 1187966714}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (21)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69928,7 +69960,7 @@ GameObject:
   - component: {fileID: 2689904138667724876}
   - component: {fileID: 1271674947}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (5)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69947,7 +69979,7 @@ GameObject:
   - component: {fileID: 2689904138711177462}
   - component: {fileID: 1230188797}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (24)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69966,7 +69998,7 @@ GameObject:
   - component: {fileID: 2689904138685599507}
   - component: {fileID: 1222502178}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (10)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69985,7 +70017,7 @@ GameObject:
   - component: {fileID: 2689904138692794276}
   - component: {fileID: 1212923819}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (22)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70004,7 +70036,7 @@ GameObject:
   - component: {fileID: 2689904138720213829}
   - component: {fileID: 1320014668}
   m_Layer: 0
-  m_Name: StoneThatchedWallA (18)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70410,7 +70442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2816339956797092098}
   m_Layer: 0
-  m_Name: ThatchedHouseBB_Platform (1)
+  m_Name: House
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70426,7 +70458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2816339956284025285}
   m_Layer: 0
-  m_Name: ThatchedHouseBB_Platform (2)
+  m_Name: House
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70442,7 +70474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2816339955658886567}
   m_Layer: 0
-  m_Name: ThatchedHouseBB_Platform (3)
+  m_Name: House
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74660,7 +74692,7 @@ GameObject:
   - component: {fileID: 1157501910898958553}
   - component: {fileID: 1082895828}
   m_Layer: 0
-  m_Name: StoneThatchedWallAL (1)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74848,7 +74880,7 @@ GameObject:
   - component: {fileID: 5426383423718031069}
   - component: {fileID: 942516005014948268}
   m_Layer: 0
-  m_Name: Prefab_mountain_background_02
+  m_Name: mountain_background_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77510,7 +77542,7 @@ Transform:
   - {fileID: 8035300695402407040}
   - {fileID: 8672321197901083901}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 23
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5428619280354513455
 MeshFilter:
@@ -79390,7 +79422,7 @@ GameObject:
   - component: {fileID: 2754698596567265116}
   - component: {fileID: 1283468230}
   m_Layer: 0
-  m_Name: StoneThatchedWallAR (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79409,7 +79441,7 @@ GameObject:
   - component: {fileID: 2754698597273812868}
   - component: {fileID: 2062367518}
   m_Layer: 0
-  m_Name: StoneThatchedWallAR (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79428,7 +79460,7 @@ GameObject:
   - component: {fileID: 2754698595289677422}
   - component: {fileID: 11188980}
   m_Layer: 0
-  m_Name: StoneThatchedWallAR (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79465,7 +79497,7 @@ GameObject:
   - component: {fileID: 2754698595629813429}
   - component: {fileID: 350276141}
   m_Layer: 0
-  m_Name: StoneThatchedWallAR (3)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80364,7 +80396,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 209800825}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &5865388869225712443
 Transform:
@@ -80392,7 +80424,7 @@ GameObject:
   - component: {fileID: 6545009386280155435}
   - component: {fileID: 2057745861808344666}
   m_Layer: 0
-  m_Name: Prefab_mountain_background_03
+  m_Name: mountain_background_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82968,7 +83000,7 @@ Transform:
   - {fileID: 1713347363207186077}
   - {fileID: 4701938451857067287}
   m_Father: {fileID: 209800825}
-  m_RootOrder: 22
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: -1.301, y: 0, z: 0}
 --- !u!4 &6552740703428322393
 Transform:
@@ -84405,7 +84437,7 @@ GameObject:
   - component: {fileID: 1347181358175089218}
   - component: {fileID: 2136890789}
   m_Layer: 0
-  m_Name: StoneWall01
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84424,7 +84456,7 @@ GameObject:
   - component: {fileID: 1347181359021094148}
   - component: {fileID: 1639193713}
   m_Layer: 0
-  m_Name: StoneWall01 (1)
+  m_Name: WallVillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

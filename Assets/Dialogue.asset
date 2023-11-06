@@ -1460,8 +1460,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1444.9087, y: 171.6179}
-    canvasZoom: 0.49
+    canvasScrollPosition: {x: 1666.5385, y: 132.24384}
+    canvasZoom: 0.8199998
   - id: 2
     fields:
     - title: Title
@@ -3137,7 +3137,7 @@ MonoBehaviour:
         value: None()
         type: 0
         typeString: 
-      conversationID: 0
+      conversationID: 14
       isRoot: 0
       isGroup: 0
       nodeColor: 
