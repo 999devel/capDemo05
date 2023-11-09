@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Camera playerCamera;
     private float rotationX = 0.0f;
-    private GameObject player;
-    private GameObject outPoint_House;
 
     //private void Awake()
     //{
@@ -36,18 +34,16 @@ public class PlayerController : MonoBehaviour
     //    }
     //}
 
-    public void teleportHouse()
-    {
-        player.transform.SetPositionAndRotation(outPoint_House.transform.position,
-            outPoint_House.transform.rotation);
-    }
+    //public void teleportHouse()
+    //{
+    //    player.transform.SetPositionAndRotation(outPoint_House.transform.position,
+    //        outPoint_House.transform.rotation);
+    //}
 
     void Start()
     { 
         rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
-        player = GameObject.FindWithTag("Player");
-        outPoint_House = GameObject.Find("outPoint_House");
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -79,44 +75,28 @@ public class PlayerController : MonoBehaviour
         }
 
         // E 키 입력 받기
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            // 상호작용을 시도할 방향 계산
-            Vector3 rayOrigin = playerCamera.transform.position;
-            Vector3 rayDirection = playerCamera.transform.forward;
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    // 상호작용을 시도할 방향 계산
+        //    Vector3 rayOrigin = playerCamera.transform.position;
+        //    Vector3 rayDirection = playerCamera.transform.forward;
 
-            RaycastHit hit;
+        //    RaycastHit hit;
 
-            // 레이캐스트를 사용하여 상호작용 가능한 오브젝트 검색
-            if (Physics.Raycast(rayOrigin, rayDirection, out hit, interactionDistance))
-            {
-                // 상호작용 가능한 오브젝트 확인
-                InteractableObject interactableObject = hit.collider.GetComponent<InteractableObject>();
+        //    // 레이캐스트를 사용하여 상호작용 가능한 오브젝트 검색
+        //    if (Physics.Raycast(rayOrigin, rayDirection, out hit, interactionDistance))
+        //    {
+        //        // 상호작용 가능한 오브젝트 확인
+        //        InteractableObject interactableObject = hit.collider.GetComponent<InteractableObject>();
 
-                if (interactableObject != null)
-                {
-                    // 상호작용 가능한 오브젝트와 상호작용
-                    interactableObject.Interact();
-                }
+        //        if (interactableObject != null)
+        //        {
+        //            // 상호작용 가능한 오브젝트와 상호작용
+        //            interactableObject.Interact();
+        //        }
+        //    }
 
-                if (interactableObject.gameObject.CompareTag("located_Lantern"))    // 플레이어가 집에서 나가면서 등불을 들면 Light가 켜지는 조건 달성
-                {
-                    isGetLantern = true;
-                    //located_Lantern.setActive(false); //랜턴 오브젝트 비활성화
-                    //player_get_Lantern.setActive(true); // 플레이어가 든 랜턴 오브젝트 활성화
-                    //located_area_Lantern.setActive(true); // 랜턴을 다시 놓을 수 있는 자리 활성화
-                }
-
-                if (interactableObject.gameObject.CompareTag("located_area_Lantern"))    
-                {
-                    isGetLantern = false;
-                    //located_Lantern.setActive(true); //랜턴 오브젝트 활성화
-                    //player_get_Lantern.setActive(false); // 플레이어가 든 랜턴 오브젝트 비활성화
-                    //located_area_Lantern.setActive(false); // 랜턴을 다시 놓을 수 있는 자리 비활성화
-                }
-            }
-
-        }
+        //}
     }
 
 
