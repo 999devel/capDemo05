@@ -45,6 +45,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
         //Cursor.lockState = CursorLockMode.Locked;
+        
+    }
+
+    private void OnEnable()
+    {
+        monster_eyes = GameObject.Find("monster_eyes");
     }
 
     void Update()
@@ -60,18 +66,30 @@ public class PlayerController : MonoBehaviour
         Vector3 moveVelocity = transform.TransformDirection(moveDirection) * moveSpeed;
         rb.velocity = moveVelocity;
 
-        
-        if(Time.timeScale != 0)
+        if(monster_eyes_active_time < 1)
         {
-            // 마우스 회전 처리
-            float mouseX = Input.GetAxis("Mouse X") * sensitivity;
-            float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+            if (Time.timeScale != 0)
+            {
+                // 마우스 회전 처리
+                float mouseX = Input.GetAxis("Mouse X") * sensitivity;
+                float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
 
-            rotationX -= mouseY;
-            rotationX = Mathf.Clamp(rotationX, -90, 90); // 상하 각도 제한
+                rotationX -= mouseY;
+                rotationX = Mathf.Clamp(rotationX, -90, 90); // 상하 각도 제한
 
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, mouseX, 0);
+                playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+                transform.rotation *= Quaternion.Euler(0, mouseX, 0);
+            }
+        }
+        else
+        {
+            monster_eyes_active_time += Time.deltaTime;
+            if (monster_eyes_active_time > 3)
+            {
+                monster_eyes_active_time = 0;
+                monster_eyes.SetActive(false);
+                GameObject.Find("dialogue_caller").SetActive(true);
+            }
         }
 
         // E 키 입력 받기
@@ -99,5 +117,14 @@ public class PlayerController : MonoBehaviour
         //}
     }
 
+    //monster eyes로 플레이어 회전시키기
+    private GameObject monster_eyes;
+    private float monster_eyes_active_time = 0;
 
+    public void look_monster_eyes()
+    {
+        monster_eyes_active_time = 1;
+        Vector3 l_vector = monster_eyes.transform.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(l_vector).normalized;
+    }
 }
