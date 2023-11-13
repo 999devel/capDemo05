@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
+
 
 public class GameManager : MonoBehaviour
 {
+    public PlayerController playerController;
+
     public GameObject enterVillageScenePanel;
     public GameObject House_Collider_Door;
     public GameObject House_Collider2;
@@ -14,6 +17,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] Village_Doors;
     public GameObject entryWall;
     public static int village_Count = 0;
+
+    public GameObject playerTorch;
+    public GameObject houseTorch;
 
     [Header("Spawn Point")]
     public Transform playerPos;
@@ -25,160 +31,123 @@ public class GameManager : MonoBehaviour
     [Header("Screen Fade")]
     public CanvasGroup canvasGroup;
     private Tween fadeTween;
-
     private void Start()
     {
         StartCoroutine(Beginning());
     }
 
-    public void MovePlayerVillageToHouse()
-    {
-        //playerPos.position = IntoHousePoint.position;
-        //playerPos.rotation = IntoHousePoint.rotation;
-        StartCoroutine(VillageToHouse());
-    }
 
-    public void MovePlayerHouseToVillage()
-    {
-        playerPos.position = outOfHousePoint.position;
-        playerPos.rotation = outOfHousePoint.rotation;
-        //village_Count = 1;
-    }
-    public void MovePlayerVillageToForest()
-    {
-        playerPos.position = IntoForestPoint.position;
-        playerPos.rotation = IntoForestPoint.rotation;
-    }
 
-    public void MovePlayerForestToVillage()
-    {
-        playerPos.position = outOfForestPoint.position;
-        playerPos.rotation = outOfForestPoint.rotation;
-    }
+
+    //public void Day2EnterVillageScene()
+    //{
+    //    village_Count = 2;
+    //}
+
 
     public void CloseEnterVillageSceneButtonPanel()
     {
         enterVillageScenePanel.SetActive(false);
     }
 
-    IEnumerator Beginning()
+    private void Fade(float endValue, float duration)
     {
-        FadeOut(2f);
-        yield return null;
-    }
-
-    IEnumerator VillageToHouse()
-    {
-        FadeIn(2f);
-        yield return fadeTween.WaitForCompletion();
-        playerPos.position = IntoHousePoint.position;
-        playerPos.rotation = IntoHousePoint.rotation;
-        FadeOut(2f);
-    }
-
-    private void Fade(float endValue, float duration, TweenCallback onEnd)
-    {
-        if(fadeTween != null)
+        if (fadeTween != null)
         {
             fadeTween.Kill(false);
         }
 
         fadeTween = canvasGroup.DOFade(endValue, duration);
-        fadeTween.onComplete += onEnd;
     }
 
     public void FadeIn(float duration)
     {
-        Fade(1f, duration, () =>
-        {
-            canvasGroup.interactable = true;
-            canvasGroup.blocksRaycasts = true;
-        });
+        Fade(1f, duration);
     }
 
     public void FadeOut(float duration)
     {
-        Fade(0f, duration, () =>
-        {
-            canvasGroup.interactable = true;
-            canvasGroup.blocksRaycasts = true;
-        });
+        Fade(0f, duration);
     }
 
-
-    private void Update()
+    IEnumerator Beginning()
     {
-        //if (isStartFadingIn)
-        //{
-        //    if (fadeCurTime < fadeMaxTime)
-        //    {
-        //        fadeCurTime += Time.deltaTime;
-        //        StartCoroutine(StartFadeIn());
-        //    }
-        //    if (fadeCurTime > fadeMaxTime)
-        //    {
-        //        isStartFadingIn = false;
-        //        fadeCurTime = 0f;
-        //        //Time.timeScale = 1f;
-        //    }
-        //}
-
-        //if (isStartFadingOut)
-        //{
-        //    if(fadeCurTime < fadeMaxTime)
-        //    {
-        //        fadeCurTime += Time.deltaTime;
-        //        StartCoroutine(StartFadeOut());
-        //    }
-        //    if(fadeCurTime > fadeMaxTime)
-        //    {
-        //        StartCoroutine(StartFadeIn());
-        //        isStartFadingOut = false;
-        //        fadeCurTime = 0f;
-        //        //Time.timeScale = 1f;
-        //    }
-        //}
-
+        playerController.playerCanMove = false;
+        FadeOut(2f);
+        yield return null;
+        playerController.playerCanMove = true;
     }
 
+    IEnumerator VillageToHouse()
+    {
+        playerController.playerCanMove = false;
+        FadeIn(2f);
+        yield return fadeTween.WaitForCompletion();
+        playerPos.position = IntoHousePoint.position;
+        playerPos.rotation = IntoHousePoint.rotation;
+        FadeOut(2f);
+        playerController.playerCanMove = true;
+    }
 
-    //public void TriggerStartFadeIn()
-    //{
-    //    isStartFadingIn = true;
-    //}
+    IEnumerator HouseToVillage()
+    {
+        playerController.playerCanMove = false;
+        FadeIn(2f);
+        yield return fadeTween.WaitForCompletion();
+        playerPos.position = outOfHousePoint.position;
+        playerPos.rotation = outOfHousePoint.rotation;
+        FadeOut(2f);
+        playerController.playerCanMove = true;
+    }
 
-    //public void TriggerStartFadeOut()
-    //{
-    //    isStartFadingOut = true;
-    //}
+    IEnumerator VillageToForest()
+    {
+        playerController.playerCanMove = false;
+        FadeIn(2f);
+        yield return fadeTween.WaitForCompletion();
+        playerPos.position = IntoForestPoint.position;
+        playerPos.rotation = IntoForestPoint.rotation;
+        FadeOut(2f);
+        playerController.playerCanMove = true;
+    }
 
-    //IEnumerator StartFadeIn()
-    //{
-    //    yield return new WaitForSeconds(1f);
+    IEnumerator ForestToVillage()
+    {
+        playerController.playerCanMove = false;
+        FadeIn(2f);
+        yield return fadeTween.WaitForCompletion();
+        playerPos.position = outOfForestPoint.position;
+        playerPos.rotation = outOfForestPoint.rotation;
+        FadeOut(2f);
+        playerController.playerCanMove = true;
+    }
 
-    //    fadeCurTime = 0f;
-    //    isStartFadingIn = true;
-    //    fadeBackground.raycastTarget = true; // 클릭 방지를 위해 레이캐스트 타겟 활성화
-    //    //Time.timeScale = 0f;
+    public void MovePlayerVillageToHouse()
+    {
+        playerTorch.SetActive(false);
+        houseTorch.SetActive(true);
+        StartCoroutine(VillageToHouse());
+    }
 
-    //    Color color = fadeBackground.color;
-    //    color.a = Mathf.Lerp(1f, 0f, fadeCurTime / fadeSpeed);
-    //    fadeBackground.color = color;
+    public void MovePlayerHouseToVillage()
+    {
+        playerTorch.SetActive(true);
+        houseTorch.SetActive(false);
+        StartCoroutine(HouseToVillage());
+    }
+    public void MovePlayerVillageToForest()
+    {
+        StartCoroutine(VillageToForest());
+    }
 
-    //    //yield return null;
-    //}
+    public void MovePlayerForestToVillage()
+    {
+        StartCoroutine(ForestToVillage());
+    }
 
-    //IEnumerator StartFadeOut()
-    //{
-    //    //fadeCurTime = 0f;
-    //    isStartFadingOut = true;
-    //    fadeBackground.raycastTarget = true; // 클릭 방지를 위해 레이캐스트 타겟 활성화
-    //    //Time.timeScale = 0f;
-
-    //    Color color = fadeBackground.color;
-    //    color.a = Mathf.Lerp(0f, 1f, fadeCurTime / fadeSpeed);
-    //    fadeBackground.color = color;
-
-    //    yield return null;
-    //}
+    public void test_playerToHousePoint()
+    {
+        playerPos.position = outOfHousePoint.position;
+        playerPos.rotation = outOfHousePoint.rotation;
+    }
 }
