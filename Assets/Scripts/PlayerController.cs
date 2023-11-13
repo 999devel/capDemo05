@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isWalk = true;   // 플레이어가 움직일 때 true, 가만히 있으면 false // 이후에 false로 초기값 수정하고 주석 삭제
     [HideInInspector] public bool isGetLantern = true;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
     private Camera playerCamera;
     private float rotationX = 0.0f;
 
