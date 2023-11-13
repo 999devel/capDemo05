@@ -157,7 +157,7 @@ MonoBehaviour:
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: "\uCC98\uC74C \uB300\uD654\uAC00 \uB05D\uB09C \uD6C4 ~ \uD50C\uB808\uC77B\uC5B4\uAC00
+      value: "\uCC98\uC74C \uB300\uD654\uAC00 \uB05D\uB09C \uD6C4 ~ \uD50C\uB808\uC774\uC5B4\uAC00
         \uC9D1\uC5D0\uC11C Collider_Bedding \uC624\uBE0C\uC81D\uD2B8\uC5D0 \uC0C1\uD638\uC791\uC6A9
         \uD558\uAE30 \uC804\uAE4C\uC9C0"
       type: 0
@@ -251,6 +251,37 @@ MonoBehaviour:
       typeString: CustomFieldType_Files
     - title: Description
       value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Success Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Failure Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: State
+      value: unassigned
+      type: 0
+      typeString: CustomFieldType_QuestState
+    - title: Is Item
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+  - id: 5
+    fields:
+    - title: Name
+      value: "3\uC77C\uCC28_\uD018\uC2A4\uD2B81_\uD37C\uC990"
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: "\uBB38\uC5D0 \uC801\uD78C \uC22B\uC790 \uC21C\uC11C\uB300\uB85C \uC21C\uCC30\uC744
+        \uB3CC\uBA74 \uD574\uACB0 \uAC00\uB2A5"
       type: 0
       typeString: CustomFieldType_Text
     - title: Success Description
@@ -1460,8 +1491,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1182.6199, y: 132.11017}
-    canvasZoom: 0.5200001
+    canvasScrollPosition: {x: 1163.5461, y: 117.06309}
+    canvasZoom: 0.4900001
   - id: 2
     fields:
     - title: Title
