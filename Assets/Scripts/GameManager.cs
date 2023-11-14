@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Transform IntoHousePoint;
     public Transform outOfForestPoint;
     public Transform IntoForestPoint;
+    public Transform test_InFrontOfWhiteMonsterPoint;
 
     [Header("Screen Fade")]
     public CanvasGroup canvasGroup;
@@ -35,6 +36,11 @@ public class GameManager : MonoBehaviour
     [Header("Door Animation")]
     [SerializeField] private Animator doorAnimator;
     //public bool doorOpenTrigger;
+
+    [Header("Sound")]
+    public AudioClip[] sfxlist;
+    [HideInInspector]public AudioClip sfxSound;
+
 
 
     private void Start()
@@ -148,8 +154,57 @@ public class GameManager : MonoBehaviour
         playerPos.rotation = outOfHousePoint.rotation;
     }
 
+    public void test_playerToInFrontOfWhiteMonster()
+    {
+        playerPos.position = test_InFrontOfWhiteMonsterPoint.position;
+        playerPos.rotation = test_InFrontOfWhiteMonsterPoint.rotation;
+    }
+
     public void DoorOpening()
     {
         doorAnimator.SetTrigger("DoorOpening");
+    }
+
+    //Sound
+    public void FindCorrectSFXSound(string sfxName)
+    {
+        for (int i = 0; i < sfxlist.Length; i++)
+        {
+            if (sfxlist[i].name == sfxName)
+            {
+                sfxSound = sfxlist[i];
+            }
+        }
+    }
+
+    // 문 점검 시 두 번 사운드
+    public void SFXSound_CheckingDoor()
+    {
+        FindCorrectSFXSound("CheckingDoor");
+        SoundManager.instance.SFXPlayer("CheckingDoor", sfxSound);
+    }
+
+    public void SFXSound_OpeningDoor()
+    {
+        FindCorrectSFXSound("OpeningDoor");
+        SoundManager.instance.SFXPlayer("OpeningDoor", sfxSound);
+    }
+
+    public void SFXSound_ScarecrowWalking()
+    {
+        FindCorrectSFXSound("ScarecrowWalking");
+        SoundManager.instance.SFXPlayer("ScarecrowWalking", sfxSound);
+    }
+
+    public void SFXSound_Scream()
+    {
+        FindCorrectSFXSound("Scream");
+        SoundManager.instance.SFXPlayer("Scream", sfxSound);
+    }
+
+    public void SFXSound_FallingSoldier()
+    {
+        FindCorrectSFXSound("FallingSoldier");
+        SoundManager.instance.SFXPlayer("FallingSoldier", sfxSound);
     }
 }
