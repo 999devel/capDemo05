@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //monster eyes로 플레이어 회전시키기
-    private GameObject monster_eyes;
+    [SerializeField] private GameObject monster_eyes;
     private float monster_eyes_active_time = 0;
 
     public void look_monster_eyes()

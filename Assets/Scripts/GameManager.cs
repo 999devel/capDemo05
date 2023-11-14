@@ -31,19 +31,16 @@ public class GameManager : MonoBehaviour
     [Header("Screen Fade")]
     public CanvasGroup canvasGroup;
     private Tween fadeTween;
+
+    [Header("Door Animation")]
+    [SerializeField] private Animator doorAnimator;
+    //public bool doorOpenTrigger;
+
+
     private void Start()
     {
         StartCoroutine(Beginning());
     }
-
-
-
-
-    //public void Day2EnterVillageScene()
-    //{
-    //    village_Count = 2;
-    //}
-
 
     public void CloseEnterVillageSceneButtonPanel()
     {
@@ -149,5 +146,10 @@ public class GameManager : MonoBehaviour
     {
         playerPos.position = outOfHousePoint.position;
         playerPos.rotation = outOfHousePoint.rotation;
+    }
+
+    public void DoorOpening()
+    {
+        doorAnimator.SetTrigger("DoorOpening");
     }
 }
