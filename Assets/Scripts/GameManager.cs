@@ -9,15 +9,6 @@ public class GameManager : MonoBehaviour
 {
     public PlayerController playerController;
 
-    public GameObject enterVillageScenePanel;
-    public GameObject House_Collider_Door;
-    public GameObject House_Collider2;
-    public GameObject Village_PatrolGuideUIPanel;
-    public GameObject[] Village_Walls;
-    public GameObject[] Village_Doors;
-    public GameObject entryWall;
-    public static int village_Count = 0;
-
     public GameObject playerTorch;
     public GameObject houseTorch;
 
@@ -41,16 +32,15 @@ public class GameManager : MonoBehaviour
     public AudioClip[] sfxlist;
     [HideInInspector]public AudioClip sfxSound;
 
+    [Header("Puzzle")]
+    public BoxCollider[] boxCollider_QuestDoors;
+    public BoxCollider[] block_QuestDoors;
+
 
 
     private void Start()
     {
         StartCoroutine(Beginning());
-    }
-
-    public void CloseEnterVillageSceneButtonPanel()
-    {
-        enterVillageScenePanel.SetActive(false);
     }
 
     private void Fade(float endValue, float duration)
@@ -83,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator VillageToHouse()
     {
-        playerController.playerCanMove = false;
+        //playerController.playerCanMove = false;
         FadeIn(2f);
         yield return fadeTween.WaitForCompletion();
         playerPos.position = IntoHousePoint.position;
@@ -94,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator HouseToVillage()
     {
-        playerController.playerCanMove = false;
+        //playerController.playerCanMove = false;
         FadeIn(2f);
         yield return fadeTween.WaitForCompletion();
         playerPos.position = outOfHousePoint.position;
@@ -105,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator VillageToForest()
     {
-        playerController.playerCanMove = false;
+        //playerController.playerCanMove = false;
         FadeIn(2f);
         yield return fadeTween.WaitForCompletion();
         playerPos.position = IntoForestPoint.position;
@@ -116,7 +106,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ForestToVillage()
     {
-        playerController.playerCanMove = false;
+        //playerController.playerCanMove = false;
         FadeIn(2f);
         yield return fadeTween.WaitForCompletion();
         playerPos.position = outOfForestPoint.position;
@@ -207,4 +197,48 @@ public class GameManager : MonoBehaviour
         FindCorrectSFXSound("FallingSoldier");
         SoundManager.instance.SFXPlayer("FallingSoldier", sfxSound);
     }
+
+
+    public void BindPlayerMoving()
+    {
+        playerController.playerCanMove = false;
+    }
+
+    public void UnBindPlayerMoving()
+    {
+        playerController.playerCanMove = true;
+    }
+
+    public void TurnOnCollider_QuestDoors()
+    {
+        for (int i = 0; i < boxCollider_QuestDoors.Length; i++)
+        {
+            boxCollider_QuestDoors[i].enabled = true;
+        }
+    }
+
+    public void TurnOffCollider_QuestDoors()
+    {
+        for (int i = 0; i < boxCollider_QuestDoors.Length; i++)
+        {
+            boxCollider_QuestDoors[i].enabled = false;
+        }
+    }
+
+    public void TurnOnBlock_QuestDoors()
+    {
+        for (int i = 0; i < block_QuestDoors.Length; i++)
+        {
+            block_QuestDoors[i].enabled = true;
+        }
+    }
+    public void TurnOffBlock_QuestDoors()
+    {
+        for (int i = 0; i < block_QuestDoors.Length; i++)
+        {
+            block_QuestDoors[i].enabled = false;
+        }
+    }
+
+
 }

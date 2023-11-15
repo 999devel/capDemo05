@@ -8,10 +8,10 @@ public class wallController : MonoBehaviour
     GameObject gm;
     private void OnEnable()
     {
-        if(GameManager.village_Count == 2)
-        {
-            GameObject gm = GameObject.Find("wrongWay");
-            gm.SetActive(false);
-        }
+        //if(GameManager.village_Count == 2)
+        //{
+        //    GameObject gm = GameObject.Find("wrongWay");
+        //    gm.SetActive(false);
+        //}
     }
 }
