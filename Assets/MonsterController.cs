@@ -5,16 +5,27 @@ using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
+    public GameManager gameManager;
     public Transform goal;
+    NavMeshAgent agent;
+    Animator anim;
 
     void Start()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+        StartCoroutine(Coroutine_AfterWatchingPlayer());
     }
 
-    void Update()
+    
+    IEnumerator Coroutine_AfterWatchingPlayer()
     {
-        
+        yield return new WaitForSeconds(3f);
+        agent.destination = goal.position;
+        anim.SetTrigger("IsRun");
+        gameManager.SFXSound_RunningMonster();
+
+        yield return new WaitForSeconds(1.2f);
+        gameObject.SetActive(false);
     }
 }

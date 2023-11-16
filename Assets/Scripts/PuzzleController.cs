@@ -7,6 +7,7 @@ public class PuzzleController : MonoBehaviour
     public List<Transform> doorTransforms;
     public List<GameObject> bloodTexts;
 
+
     [HideInInspector] public bool isStartPuzzle;
 
     private void Start()

@@ -198,6 +198,12 @@ public class GameManager : MonoBehaviour
         SoundManager.instance.SFXPlayer("FallingSoldier", sfxSound);
     }
 
+    public void SFXSound_RunningMonster()
+    {
+        FindCorrectSFXSound("RunningMonster");
+        SoundManager.instance.SFXPlayer("RunningMonster", sfxSound);
+    }
+
 
     public void BindPlayerMoving()
     {
