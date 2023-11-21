@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    PlayerController playerController;
+
     public static SoundManager instance;
 
     public AudioMixer mixer;

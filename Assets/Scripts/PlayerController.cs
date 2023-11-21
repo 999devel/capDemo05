@@ -1,23 +1,44 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //public Animator cameraAnim; 
+
     public bool playerCanMove;
+    public bool isGetLantern;
+    public bool isWalk;
+    public bool isPlayerMove;
 
-    [Header("º¯¼ö")]
-    public float moveSpeed = 5.0f; // ÀÌµ¿ ¼Óµµ Á¶Àı º¯¼ö
-    public float sensitivity = 2.0f; // ¸¶¿ì½º È¸Àü °¨µµ
-    public float interactionDistance = 5.0f; // »óÈ£ÀÛ¿ë °Å¸®
-
-    [HideInInspector] public int dialogueNum = 0;
-    [HideInInspector] public bool isWalk = true;   // ÇÃ·¹ÀÌ¾î°¡ ¿òÁ÷ÀÏ ¶§ true, °¡¸¸È÷ ÀÖÀ¸¸é false // ÀÌÈÄ¿¡ false·Î ÃÊ±â°ª ¼öÁ¤ÇÏ°í ÁÖ¼® »èÁ¦
-    [HideInInspector] public bool isGetLantern = true;
+    [Header("ë³€ìˆ˜")]
+    public float moveSpeed = 5.0f; // ì´ë™ ì†ë„ ì¡°ì ˆ ë³€ìˆ˜
+    public float sensitivity = 2.0f; // ë§ˆìš°ìŠ¤ íšŒì „ ê°ë„
+    [SerializeField] private float headbobSpeed = 4f;
+    [SerializeField] private float headbobAmount = 0.05f;
 
     private Rigidbody rb;
     private Camera playerCamera;
-    private float rotationX = 0.0f;
+    AudioSource audioSource;
+
+    private float rotationX;
+
+    //headbob
+
+    private float defaultYPos;
+    private float timer;
+
+    [Header("í¼ì¦")]
+    public List<Transform> doorTransforms;
+    public List<GameObject> bloodTexts;
+
+    [HideInInspector] public bool isStartPuzzle;
+    int puzzleIndex;
+
+    public GameObject TriggerPuzzleClear_21;
+    LayerMask layerMask = LayerMask.GetMask("Puzzle");
+
+
 
 
     void Start()
@@ -25,66 +46,203 @@ public class PlayerController : MonoBehaviour
         playerCanMove = true;
         rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
-        Cursor.lockState = CursorLockMode.Locked;
-        
+        audioSource = GetComponent<AudioSource>();
+
+        //í¼ì¦
+        Shuffle();
+        SetBloodTexts();
+
     }
 
-    private void OnEnable()
-    {
-        monster_eyes = GameObject.Find("monster_eyes");
-    }
 
-    void Update()
+    private void Update()
     {
         if (playerCanMove)
         {
-            // WASD Å° ÀÔ·Â ¹Ş±â
+            // WASD í‚¤ ì…ë ¥ ë°›ê¸°
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 
-            // ÀÌµ¿ ¹æÇâ °è»ê
+            // ì´ë™ ë°©í–¥ ê³„ì‚°
             Vector3 moveDirection = new Vector3(horizontalInput, 0.0f, verticalInput).normalized;
 
-            // ¿òÁ÷ÀÓ Àû¿ë
+            // ì›€ì§ì„ ì ìš©
             Vector3 moveVelocity = transform.TransformDirection(moveDirection) * moveSpeed;
             rb.velocity = moveVelocity;
 
-            if (monster_eyes_active_time < 1)
+            //ë§ˆìš°ìŠ¤ íšŒì „ ì²˜ë¦¬
+            float mouseX = Input.GetAxis("Mouse X") * sensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+
+            rotationX -= mouseY;
+            rotationX = Mathf.Clamp(rotationX, -90, 90); // ìƒí•˜ ê°ë„ ì œí•œ
+
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, mouseX, 0);
+
+            if (rb.velocity.x != 0 || rb.velocity.z != 0)
+                isPlayerMove = true;
+            else
+                isPlayerMove = false;
+
+            if (isPlayerMove)
             {
-                if (Time.timeScale != 0)
-                {
-                    // ¸¶¿ì½º È¸Àü Ã³¸®
-                    float mouseX = Input.GetAxis("Mouse X") * sensitivity;
-                    float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
-
-                    rotationX -= mouseY;
-                    rotationX = Mathf.Clamp(rotationX, -90, 90); // »óÇÏ °¢µµ Á¦ÇÑ
-
-                    playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-                    transform.rotation *= Quaternion.Euler(0, mouseX, 0);
-                }
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
             }
             else
-            {
-                monster_eyes_active_time += Time.deltaTime;
-                if (monster_eyes_active_time > 3)
-                {
-                    monster_eyes_active_time = 0;
-                    monster_eyes.SetActive(false);
-                    GameObject.Find("dialogue_caller").SetActive(true);
-                }
-            }
+                audioSource.Stop();
+        }
+
+
+        //Ray ray = new Ray(transform.position, transform.forward);
+        //RaycastHit hitdata;
+
+        //if(Physics.Raycast(ray, out hitdata, 50, layerMask))
+        //{
+        //    // 1
+        //    if (puzzleIndex == 1)
+        //    {
+        //        if (hitdata.collider.gameObject.CompareTag("1"))
+        //        {
+        //            if (Input.GetKeyDown(KeyCode.Space))
+        //            {
+        //                puzzleIndex++;
+        //                Debug.Log("ì„±ê³µ");
+        //            }
+
+        //        }
+        //        else
+        //        {
+        //            if (Input.GetKeyDown(KeyCode.Space))
+        //            {
+        //                Debug.Log("ì‹¤íŒ¨");
+
+        //                puzzleIndex = 1;
+        //                Shuffle();
+        //                SetBloodTexts();
+        //            }
+        //        }
+        //    }
+
+        //    // 2
+        //    if (puzzleIndex == 2)
+        //    {
+        //        if (hitdata.collider.gameObject.CompareTag("2"))
+        //        {
+        //            if (Input.GetKeyDown(KeyCode.Space))
+        //            {
+        //                puzzleIndex++;
+        //                Debug.Log("ì„±ê³µ");
+
+        //            }
+
+        //        }
+        //        else
+        //        {
+        //            if (Input.GetKeyDown(KeyCode.Space))
+        //            {
+        //                Debug.Log("ì‹¤íŒ¨");
+
+        //                puzzleIndex = 1;
+        //                Shuffle();
+        //                SetBloodTexts();
+        //            }
+        //        }
+        //    }
+
+        //    // 2
+        //    if (puzzleIndex == 3)
+        //    {
+        //        if (hitdata.collider.gameObject.CompareTag("3"))
+        //        {
+        //            if (Input.GetKeyDown(KeyCode.Space))
+        //            {
+        //                puzzleIndex++;
+        //                Debug.Log("ì„±ê³µ");
+
+        //            }
+
+        //        }
+        //        else
+        //        {
+        //            if (Input.GetKeyDown(KeyCode.Space))
+        //            {
+        //                Debug.Log("ì‹¤íŒ¨");
+
+        //                puzzleIndex = 1;
+        //                Shuffle();
+        //                SetBloodTexts();
+        //            }
+        //        }
+        //    }
+
+        //    // 4
+        //    if (puzzleIndex == 4)
+        //    {
+        //        if (hitdata.collider.gameObject.CompareTag("4"))
+        //        {
+        //            if (Input.GetKeyDown(KeyCode.Space))
+        //            {
+        //                puzzleIndex++;
+        //                Debug.Log("ì„±ê³µ");
+
+        //            }
+
+        //        }
+        //        else
+        //        {
+        //            if (Input.GetKeyDown(KeyCode.Space))
+        //            {
+        //                Debug.Log("ì‹¤íŒ¨");
+        //                puzzleIndex = 1;
+        //                Shuffle();
+        //                SetBloodTexts();
+        //            }
+        //        }
+        //    }
+
+        //    if (puzzleIndex == 5)
+        //    {
+        //        for (int i = 0; i < bloodTexts.Count; i++)
+        //        {
+        //            bloodTexts[i].SetActive(false);
+        //        }
+
+        //        TriggerPuzzleClear_21.SetActive(true);
+        //        puzzleIndex++;
+
+        //    }
+        //}
+
+            
+    }
+
+    //í¼ì¦
+    // ê²Œì„ ì˜¤ë¸Œì íŠ¸ ë¦¬ìŠ¤íŠ¸ ë°°ì—´ ì„ê¸° : ì‹¤íŒ¨í–ˆì„ ê²½ìš° í…ìŠ¤íŠ¸ì˜ ìœ„ì¹˜ë¥¼ ì¬ë°°ì¹˜í•˜ê¸° ìœ„í•¨
+    public void Shuffle()
+    {
+        int n = bloodTexts.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = Random.Range(0, n + 1);
+            GameObject transValue = bloodTexts[k];
+            bloodTexts[k] = bloodTexts[n];
+            bloodTexts[n] = transValue;
         }
     }
 
-    //monster eyes·Î ÇÃ·¹ÀÌ¾î È¸Àü½ÃÅ°±â
-    [SerializeField] private GameObject monster_eyes;
-    private float monster_eyes_active_time = 0;
-
-    public void look_monster_eyes()
+    // shuffleì—ì„œ ì„ì¸ í…ìŠ¤íŠ¸ ë°°ì—´ì„ ì§€ì •í•´ë†“ì€ ìœ„ì¹˜ì— ë°°ì¹˜í•˜ì—¬ ì„ì˜ì„± ë¶€ì—¬
+    public void SetBloodTexts()
     {
-        monster_eyes_active_time = 1;
-        Vector3 l_vector = monster_eyes.transform.position - transform.position;
-        transform.rotation = Quaternion.LookRotation(l_vector).normalized;
+        for (int i = 0; i < bloodTexts.Count; i++)
+        {
+            bloodTexts[i].transform.position = doorTransforms[i].position;
+            bloodTexts[i].transform.rotation = doorTransforms[i].rotation;
+        }
     }
+
+
+
 }

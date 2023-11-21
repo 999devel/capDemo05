@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.UI;
+using UnityEngine.AI;
 
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject Map;
+    public GameObject PauseMenu;
+
     public PlayerController playerController;
 
     public GameObject playerTorch;
@@ -18,7 +23,6 @@ public class GameManager : MonoBehaviour
     public Transform IntoHousePoint;
     public Transform outOfForestPoint;
     public Transform IntoForestPoint;
-    public Transform test_InFrontOfWhiteMonsterPoint;
 
     [Header("Screen Fade")]
     public CanvasGroup canvasGroup;
@@ -30,17 +34,84 @@ public class GameManager : MonoBehaviour
 
     [Header("Sound")]
     public AudioClip[] sfxlist;
+    public AudioClip impressedBG;
     [HideInInspector]public AudioClip sfxSound;
 
     [Header("Puzzle")]
     public BoxCollider[] boxCollider_QuestDoors;
     public BoxCollider[] block_QuestDoors;
 
+    [Header("Soldier Controller")]
+    public NavMeshAgent soldierNav;
+    public Animator soldierAnim;
+    public List<Transform> SoldierWaypoint = new List<Transform>();
+    int SoldierIndex;
+    Coroutine coWaypoint;
+    public GameObject Soldier_Faded;
+    public GameObject Soldier_AtEntrance;
+
+    [Header("Monster Controller")]
+    public NavMeshAgent monsterNav;
+    public Animator monsterAnim;
+    public List<Transform> monsterWayPoint = new List<Transform>();
+    int monsterIndex;
+    Coroutine coMonsterRun;
+    public GameObject monster;
+
+    [Header("Flash Scarecrow")]
+    public GameObject flashed_Scarecrow;
+    public GameObject flashTrigger;
+
+    [Header("Death Scean")]
+    public GameObject playerCamera;
+    public GameObject deathSceneCamera;
+    public GameObject deathSceanMonster;
+    public GameObject blackBackground;
+
+
+
 
 
     private void Start()
     {
         StartCoroutine(Beginning());
+    }
+
+    private void Update()
+    {
+        if(Map.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                Map.SetActive(false);
+                UnBindPlayerMoving();
+            }
+        }
+        else if(Map.activeSelf == false)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                Map.SetActive(true);
+                BindPlayerMoving();
+            }
+        }
+
+        if (PauseMenu.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                PauseMenu.SetActive(false);
+                UnBindPlayerMoving();
+            }
+        }
+        else if (PauseMenu.activeSelf == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                PauseMenu.SetActive(true);
+                BindPlayerMoving();
+            }
+        }
     }
 
     private void Fade(float endValue, float duration)
@@ -73,7 +144,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator VillageToHouse()
     {
-        //playerController.playerCanMove = false;
+        playerController.playerCanMove = false;
         FadeIn(2f);
         yield return fadeTween.WaitForCompletion();
         playerPos.position = IntoHousePoint.position;
@@ -84,7 +155,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator HouseToVillage()
     {
-        //playerController.playerCanMove = false;
+        playerController.playerCanMove = false;
         FadeIn(2f);
         yield return fadeTween.WaitForCompletion();
         playerPos.position = outOfHousePoint.position;
@@ -95,18 +166,19 @@ public class GameManager : MonoBehaviour
 
     IEnumerator VillageToForest()
     {
-        //playerController.playerCanMove = false;
-        FadeIn(2f);
-        yield return fadeTween.WaitForCompletion();
+        playerController.playerCanMove = false;
+        FadeIn(3f);
+        yield return new WaitForSeconds(3f);
+
         playerPos.position = IntoForestPoint.position;
         playerPos.rotation = IntoForestPoint.rotation;
-        FadeOut(2f);
+        FadeOut(3f);
         playerController.playerCanMove = true;
     }
 
     IEnumerator ForestToVillage()
     {
-        //playerController.playerCanMove = false;
+        playerController.playerCanMove = false;
         FadeIn(2f);
         yield return fadeTween.WaitForCompletion();
         playerPos.position = outOfForestPoint.position;
@@ -142,12 +214,6 @@ public class GameManager : MonoBehaviour
     {
         playerPos.position = outOfHousePoint.position;
         playerPos.rotation = outOfHousePoint.rotation;
-    }
-
-    public void test_playerToInFrontOfWhiteMonster()
-    {
-        playerPos.position = test_InFrontOfWhiteMonsterPoint.position;
-        playerPos.rotation = test_InFrontOfWhiteMonsterPoint.rotation;
     }
 
     public void DoorOpening()
@@ -204,6 +270,23 @@ public class GameManager : MonoBehaviour
         SoundManager.instance.SFXPlayer("RunningMonster", sfxSound);
     }
 
+    public void SFXSound_Knock()
+    {
+        FindCorrectSFXSound("Knock");
+        SoundManager.instance.SFXPlayer("Knock", sfxSound);
+    }
+
+    public void SFXSound_FlashScarecrow()
+    {
+        FindCorrectSFXSound("FlashScarecrow");
+        SoundManager.instance.SFXPlayer("OpeningDoor", sfxSound);
+    }
+
+
+    public void BGSound_ImpressedBG()
+    {
+        SoundManager.instance.BgSoundPlay(impressedBG);
+    }
 
     public void BindPlayerMoving()
     {
@@ -246,5 +329,109 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SoliderGoEntranceOfVillage()
+    {
+        coWaypoint = StartCoroutine(CoroutineSoliderGoEntranceOfVillage());
+    }
 
+
+    IEnumerator CoroutineSoliderGoEntranceOfVillage()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.3f);
+
+            soldierAnim.SetTrigger("isWalk");
+            soldierNav.destination = SoldierWaypoint[SoldierIndex].position;
+
+            if (!soldierNav.pathPending && soldierNav.remainingDistance < 1f)
+                Soldier_GotoNext(); //목적지까지의 거리가 1이하거나 도착했으면 함수실행
+            if (SoldierIndex == SoldierWaypoint.Count)
+            {
+                Soldier_Faded.SetActive(false);
+                Soldier_AtEntrance.SetActive(true);
+                StopCoroutine(coWaypoint);
+            }
+        }
+    }
+    void Soldier_GotoNext()
+    {
+        soldierNav.destination = SoldierWaypoint[SoldierIndex].position;
+        SoldierIndex = (SoldierIndex + 1);
+    }
+
+
+    public void MonsterSetting()
+    {
+        coMonsterRun = StartCoroutine(MonsterRun());
+    }
+
+
+    IEnumerator MonsterRun()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.3f);
+
+            //monsterAnim.SetTrigger("isRun");
+            monsterNav.destination = monsterWayPoint[monsterIndex].position;
+
+            if (!monsterNav.pathPending && monsterNav.remainingDistance < 1f)
+                Monster_GotoNext(); //목적지까지의 거리가 1이하거나 도착했으면 함수실행
+            if (monsterIndex == monsterWayPoint.Count)
+            {
+                monster.SetActive(false);
+                StopCoroutine(coMonsterRun);
+            }
+        }
+    }
+    void Monster_GotoNext()
+    {
+        monsterNav.destination = monsterWayPoint[monsterIndex].position;
+        monsterIndex = (monsterIndex + 1);
+    }
+
+
+    public void ClosePauseMenu()
+    {
+        PauseMenu.SetActive(false);
+        UnBindPlayerMoving();
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void FlashScarecrow()
+    {
+        StartCoroutine(coFlashScarecrow());
+    }
+
+    IEnumerator coFlashScarecrow()
+    {
+        yield return new WaitForSeconds(0.7f);
+        flashed_Scarecrow.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        flashed_Scarecrow.SetActive(false);
+        flashTrigger.SetActive(false);
+    }
+
+
+    public void LoadDeathScene()
+    {
+        StartCoroutine(coLoadDeathScene());
+    }
+
+    IEnumerator coLoadDeathScene()
+    {
+        yield return new WaitForSeconds(3.5f);
+        playerCamera.SetActive(false);
+        deathSceneCamera.SetActive(true);
+        deathSceanMonster.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        blackBackground.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Ending");
+    }
 }
