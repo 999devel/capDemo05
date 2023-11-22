@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
     int puzzleIndex;
 
     public GameObject TriggerPuzzleClear_21;
-    LayerMask layerMask = LayerMask.GetMask("Puzzle");
 
 
 
