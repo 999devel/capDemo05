@@ -58,9 +58,9 @@ public class GameManager : MonoBehaviour
     Coroutine coMonsterRun;
     public GameObject monster;
 
-    [Header("Flash Scarecrow")]
-    public GameObject flashed_Scarecrow;
-    public GameObject flashTrigger;
+    //[Header("Flash Scarecrow")]
+    //public GameObject flashed_Scarecrow;
+    //public GameObject flashTrigger;
 
     [Header("Death Scean")]
     public GameObject playerCamera;
@@ -137,53 +137,65 @@ public class GameManager : MonoBehaviour
     IEnumerator Beginning()
     {
         playerController.playerCanMove = false;
-        FadeOut(2f);
-        yield return null;
+        FadeOut(2.5f);
+        yield return new WaitForSeconds(2.5f);
         playerController.playerCanMove = true;
     }
 
     IEnumerator VillageToHouse()
     {
         playerController.playerCanMove = false;
-        FadeIn(2f);
-        yield return fadeTween.WaitForCompletion();
+        FadeIn(2.5f);
+        yield return new WaitForSeconds(2.5f);
+
         playerPos.position = IntoHousePoint.position;
         playerPos.rotation = IntoHousePoint.rotation;
-        FadeOut(2f);
+        FadeOut(2.5f);
+        yield return new WaitForSeconds(2.5f);
         playerController.playerCanMove = true;
+
     }
 
     IEnumerator HouseToVillage()
     {
         playerController.playerCanMove = false;
-        FadeIn(2f);
-        yield return fadeTween.WaitForCompletion();
+        FadeIn(2.5f);
+        yield return new WaitForSeconds(2.5f);
+        Time.timeScale = 1f;
+
         playerPos.position = outOfHousePoint.position;
         playerPos.rotation = outOfHousePoint.rotation;
-        FadeOut(2f);
+        FadeOut(2.5f);
+        yield return new WaitForSeconds(2.5f);
         playerController.playerCanMove = true;
     }
 
     IEnumerator VillageToForest()
     {
         playerController.playerCanMove = false;
-        FadeIn(3f);
-        yield return new WaitForSeconds(3f);
+
+        FadeIn(2.5f);
+        yield return new WaitForSeconds(2.5f);
+        Time.timeScale = 1f;
 
         playerPos.position = IntoForestPoint.position;
         playerPos.rotation = IntoForestPoint.rotation;
-        FadeOut(3f);
+        FadeOut(2.5f);
+        yield return new WaitForSeconds(2.5f);
         playerController.playerCanMove = true;
     }
 
     IEnumerator ForestToVillage()
     {
         playerController.playerCanMove = false;
-        FadeIn(2f);
-        yield return fadeTween.WaitForCompletion();
+
+        FadeIn(2.5f);
+        yield return new WaitForSeconds(2.5f);
+
         playerPos.position = outOfForestPoint.position;
         playerPos.rotation = outOfForestPoint.rotation;
-        FadeOut(2f);
+        FadeOut(2.5f);
+        yield return new WaitForSeconds(2.5f);
         playerController.playerCanMove = true;
     }
 
@@ -233,7 +245,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // 문 점검 시 두 번 사운드
     public void SFXSound_CheckingDoor()
     {
         FindCorrectSFXSound("CheckingDoor");
@@ -290,7 +301,7 @@ public class GameManager : MonoBehaviour
 
     public void BindPlayerMoving()
     {
-        playerController.playerCanMove = false;
+        playerController.playerCanMove = false;     // ui 조작 중 플레이어의 화면 회전을 막기 위함
     }
 
     public void UnBindPlayerMoving()
@@ -403,19 +414,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void FlashScarecrow()
-    {
-        StartCoroutine(coFlashScarecrow());
-    }
+    //public void FlashScarecrow()
+    //{
+    //    StartCoroutine(coFlashScarecrow());
+    //}
 
-    IEnumerator coFlashScarecrow()
-    {
-        yield return new WaitForSeconds(0.7f);
-        flashed_Scarecrow.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
-        flashed_Scarecrow.SetActive(false);
-        flashTrigger.SetActive(false);
-    }
+    //IEnumerator coFlashScarecrow()
+    //{
+    //    yield return new WaitForSeconds(0.7f);
+    //    flashed_Scarecrow.SetActive(true);
+    //    yield return new WaitForSeconds(0.3f);
+    //    flashed_Scarecrow.SetActive(false);
+    //    flashTrigger.SetActive(false);
+    //}
 
 
     public void LoadDeathScene()
