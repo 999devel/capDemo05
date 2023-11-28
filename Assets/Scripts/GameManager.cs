@@ -58,9 +58,8 @@ public class GameManager : MonoBehaviour
     Coroutine coMonsterRun;
     public GameObject monster;
 
-    //[Header("Flash Scarecrow")]
-    //public GameObject flashed_Scarecrow;
-    //public GameObject flashTrigger;
+    [Header("Flash Scarecrow")]
+    public GameObject flashed_Scarecrow;
 
     [Header("Death Scean")]
     public GameObject playerCamera;
@@ -290,7 +289,7 @@ public class GameManager : MonoBehaviour
     public void SFXSound_FlashScarecrow()
     {
         FindCorrectSFXSound("FlashScarecrow");
-        SoundManager.instance.SFXPlayer("OpeningDoor", sfxSound);
+        SoundManager.instance.SFXPlayer("FlashScarecrow", sfxSound);
     }
 
 
@@ -414,19 +413,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    //public void FlashScarecrow()
-    //{
-    //    StartCoroutine(coFlashScarecrow());
-    //}
+    public void FlashScarecrow()
+    {
+        StartCoroutine(coFlashScarecrow());
+    }
 
-    //IEnumerator coFlashScarecrow()
-    //{
-    //    yield return new WaitForSeconds(0.7f);
-    //    flashed_Scarecrow.SetActive(true);
-    //    yield return new WaitForSeconds(0.3f);
-    //    flashed_Scarecrow.SetActive(false);
-    //    flashTrigger.SetActive(false);
-    //}
+    IEnumerator coFlashScarecrow()
+    {
+        yield return new WaitForSeconds(1f);
+        flashed_Scarecrow.SetActive(true);
+        yield return new WaitForSeconds(0.7f);
+        flashed_Scarecrow.SetActive(false);
+    }
 
 
     public void LoadDeathScene()

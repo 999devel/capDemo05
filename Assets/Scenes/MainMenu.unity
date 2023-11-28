@@ -280,7 +280,6 @@ MonoBehaviour:
   monsterAnim: {fileID: 0}
   monsterWayPoint: []
   monster: {fileID: 0}
-  flashed_Scarecrow: {fileID: 0}
   playerCamera: {fileID: 0}
   deathSceneCamera: {fileID: 0}
   deathSceanMonster: {fileID: 0}
@@ -709,7 +708,7 @@ GameObject:
   - component: {fileID: 601051566}
   - component: {fileID: 601051565}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1537,7 +1536,7 @@ GameObject:
   - component: {fileID: 1472722506}
   - component: {fileID: 1472722505}
   m_Layer: 5
-  m_Name: newStartButton
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
