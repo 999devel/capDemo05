@@ -420,9 +420,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator coFlashScarecrow()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.7f);
         flashed_Scarecrow.SetActive(true);
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1.2f);
         flashed_Scarecrow.SetActive(false);
     }
 
