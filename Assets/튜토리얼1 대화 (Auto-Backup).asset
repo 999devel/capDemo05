@@ -790,11 +790,11 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 423.8458
-        y: 536.19086
+        y: 537.8302
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 73.77045}
+    canvasScrollPosition: {x: 0, y: 4.91803}
     canvasZoom: 0.6100004
   syncInfo:
     syncActors: 0

@@ -339,6 +339,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    // 03포졸 > 03포졸입구 까지의 움직임
+    #region
     public void SoliderGoEntranceOfVillage()
     {
         coWaypoint = StartCoroutine(CoroutineSoliderGoEntranceOfVillage());
@@ -347,6 +350,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CoroutineSoliderGoEntranceOfVillage()
     {
+        yield return new WaitForSeconds(1.2f);
         while (true)
         {
             yield return new WaitForSeconds(0.3f);
@@ -369,8 +373,10 @@ public class GameManager : MonoBehaviour
         soldierNav.destination = SoldierWaypoint[SoldierIndex].position;
         SoldierIndex = (SoldierIndex + 1);
     }
+    #endregion
 
-
+    // 18몬스터 삼거리에 잠깐 비춰지는 움직임
+    #region
     public void MonsterSetting()
     {
         coMonsterRun = StartCoroutine(MonsterRun());
@@ -400,7 +406,7 @@ public class GameManager : MonoBehaviour
         monsterNav.destination = monsterWayPoint[monsterIndex].position;
         monsterIndex = (monsterIndex + 1);
     }
-
+    #endregion
 
     public void ClosePauseMenu()
     {
@@ -413,6 +419,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    // 15플래쉬 허수아비
+    #region
     public void FlashScarecrow()
     {
         StartCoroutine(coFlashScarecrow());
@@ -425,8 +433,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
         flashed_Scarecrow.SetActive(false);
     }
+    #endregion
 
-
+    //퍼즐 클리어 이후 공격받는 신
+    #region
     public void LoadDeathScene()
     {
         StartCoroutine(coLoadDeathScene());
@@ -443,4 +453,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Ending");
     }
+    #endregion
+
 }
