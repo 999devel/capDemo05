@@ -37,6 +37,13 @@ public class PlayerController : MonoBehaviour
 
     public GameObject TriggerPuzzleClear_21;
 
+    [Header("Quest07")]
+    public bool isRotateToDiedSoldier;
+    public bool isRotateToMonster;
+    public Transform DiedSoldier;
+    public Transform Monster_Mountain;
+    float rotationSpeed = 1.7f;
+
 
 
 
@@ -94,128 +101,44 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        //Ray ray = new Ray(transform.position, transform.forward);
-        //RaycastHit hitdata;
+        if (isRotateToDiedSoldier)
+        {
+            Vector3 targetDirection = DiedSoldier.position - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-        //if(Physics.Raycast(ray, out hitdata, 50, layerMask))
-        //{
-        //    // 1
-        //    if (puzzleIndex == 1)
-        //    {
-        //        if (hitdata.collider.gameObject.CompareTag("1"))
-        //        {
-        //            if (Input.GetKeyDown(KeyCode.Space))
-        //            {
-        //                puzzleIndex++;
-        //                Debug.Log("성공");
-        //            }
+        }
 
-        //        }
-        //        else
-        //        {
-        //            if (Input.GetKeyDown(KeyCode.Space))
-        //            {
-        //                Debug.Log("실패");
+        if (isRotateToMonster)
+        {
+            Vector3 targetDirection = Monster_Mountain.position - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-        //                puzzleIndex = 1;
-        //                Shuffle();
-        //                SetBloodTexts();
-        //            }
-        //        }
-        //    }
+        }
 
-        //    // 2
-        //    if (puzzleIndex == 2)
-        //    {
-        //        if (hitdata.collider.gameObject.CompareTag("2"))
-        //        {
-        //            if (Input.GetKeyDown(KeyCode.Space))
-        //            {
-        //                puzzleIndex++;
-        //                Debug.Log("성공");
-
-        //            }
-
-        //        }
-        //        else
-        //        {
-        //            if (Input.GetKeyDown(KeyCode.Space))
-        //            {
-        //                Debug.Log("실패");
-
-        //                puzzleIndex = 1;
-        //                Shuffle();
-        //                SetBloodTexts();
-        //            }
-        //        }
-        //    }
-
-        //    // 2
-        //    if (puzzleIndex == 3)
-        //    {
-        //        if (hitdata.collider.gameObject.CompareTag("3"))
-        //        {
-        //            if (Input.GetKeyDown(KeyCode.Space))
-        //            {
-        //                puzzleIndex++;
-        //                Debug.Log("성공");
-
-        //            }
-
-        //        }
-        //        else
-        //        {
-        //            if (Input.GetKeyDown(KeyCode.Space))
-        //            {
-        //                Debug.Log("실패");
-
-        //                puzzleIndex = 1;
-        //                Shuffle();
-        //                SetBloodTexts();
-        //            }
-        //        }
-        //    }
-
-        //    // 4
-        //    if (puzzleIndex == 4)
-        //    {
-        //        if (hitdata.collider.gameObject.CompareTag("4"))
-        //        {
-        //            if (Input.GetKeyDown(KeyCode.Space))
-        //            {
-        //                puzzleIndex++;
-        //                Debug.Log("성공");
-
-        //            }
-
-        //        }
-        //        else
-        //        {
-        //            if (Input.GetKeyDown(KeyCode.Space))
-        //            {
-        //                Debug.Log("실패");
-        //                puzzleIndex = 1;
-        //                Shuffle();
-        //                SetBloodTexts();
-        //            }
-        //        }
-        //    }
-
-        //    if (puzzleIndex == 5)
-        //    {
-        //        for (int i = 0; i < bloodTexts.Count; i++)
-        //        {
-        //            bloodTexts[i].SetActive(false);
-        //        }
-
-        //        TriggerPuzzleClear_21.SetActive(true);
-        //        puzzleIndex++;
-
-        //    }
-        //}
-
-            
     }
+
+    public void StartRotateToDiedSoldier()
+    {
+        isRotateToDiedSoldier = true;
+    }
+
+    public void StopRotateToDiedSoldier()
+    {
+        isRotateToDiedSoldier = false;
+    }
+    public void StartRotateToMonster_Mountain()
+    {
+        isRotateToMonster = true;
+    }
+    public void StopRotateToMonster_Mountain()
+    {
+        isRotateToMonster = false;
+    }
+
+
+
 
     //퍼즐
     // 게임 오브젝트 리스트 배열 섞기 : 실패했을 경우 텍스트의 위치를 재배치하기 위함

@@ -50,6 +50,11 @@ public class GameManager : MonoBehaviour
     public GameObject Soldier_Faded;
     public GameObject Soldier_AtEntrance;
 
+    [Header("07Watching Monster In the Mountain")]
+    public GameObject Player;
+    public GameObject Soldier_Ragdoll;
+    public GameObject monster_InTheMountain;
+
     [Header("Monster Controller")]
     public NavMeshAgent monsterNav;
     public Animator monsterAnim;
@@ -66,6 +71,13 @@ public class GameManager : MonoBehaviour
     public GameObject deathSceneCamera;
     public GameObject deathSceanMonster;
     public GameObject blackBackground;
+
+    [Header("Quest")]
+    public GameObject Quest01;
+    public GameObject Quest07;
+    public GameObject Quest07Block;
+    public GameObject Quest07DiedSoldier;
+    public GameObject Quest08ConversationTrigger;
 
 
 
@@ -340,6 +352,18 @@ public class GameManager : MonoBehaviour
     }
 
 
+    //01대화 트리거
+    public void TriggerConversation01ntoHouse()
+    {
+        StartCoroutine(coTriggerConveersation01IntoHouse());
+    }
+
+    IEnumerator coTriggerConveersation01IntoHouse()
+    {
+        yield return new WaitForSeconds(2.1f);
+        Quest01.SetActive(true);
+    }
+
     // 03포졸 > 03포졸입구 까지의 움직임
     #region
     public void SoliderGoEntranceOfVillage()
@@ -350,7 +374,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CoroutineSoliderGoEntranceOfVillage()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.7f);
         while (true)
         {
             yield return new WaitForSeconds(0.3f);
@@ -374,6 +398,71 @@ public class GameManager : MonoBehaviour
         SoldierIndex = (SoldierIndex + 1);
     }
     #endregion
+
+    // 06몬스터
+    #region
+
+    public void Action06()
+    {
+        StartCoroutine(coAction06());
+    }
+
+    
+
+    IEnumerator coAction06()
+    {
+        yield return new WaitForSeconds(0.7f);
+        BindPlayerMoving();
+        yield return new WaitForSeconds(1.2f);
+        playerController.StartRotateToDiedSoldier();
+        yield return new WaitForSeconds(3f);
+        playerController.StopRotateToDiedSoldier();
+        monster_InTheMountain.SetActive(true);
+        playerController.StartRotateToMonster_Mountain();
+        yield return new WaitForSeconds(6f);
+        playerController.StopRotateToMonster_Mountain();
+        Player.transform.DOLocalRotate(new Vector3(0, 0, 0), 2f);
+        UnBindPlayerMoving();
+        Quest07.SetActive(true);
+        Quest07Block.SetActive(true);
+    }
+
+    #endregion
+
+    // 07시신정리
+    public void Action07()
+    {
+        StartCoroutine(coAcition07());
+    }
+
+    IEnumerator coAcition07()
+    {
+        BindPlayerMoving();
+        FadeIn(2f);
+        yield return new WaitForSeconds(2.1f);
+        Soldier_Ragdoll.SetActive(false);
+        Quest07DiedSoldier.SetActive(true);
+        FadeOut(2f);
+        UnBindPlayerMoving();
+    }
+
+    //08 옷 태우기
+    public void Action08_FireClothes()
+    {
+        StartCoroutine(coAction08_FireClothes());
+    }
+
+    IEnumerator coAction08_FireClothes()
+    {
+        BindPlayerMoving();
+        FadeIn(2f);
+        yield return new WaitForSeconds(2.1f);
+        FadeOut(2f);
+        yield return new WaitForSeconds(2.1f);
+        UnBindPlayerMoving();
+        Quest08ConversationTrigger.SetActive(true);
+    }
+
 
     // 18몬스터 삼거리에 잠깐 비춰지는 움직임
     #region

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class MonsterController : MonoBehaviour
 {
     public GameManager gameManager;
-    public Transform goal;
+    public Transform nextPos;
     NavMeshAgent agent;
     Animator anim;
 
@@ -20,12 +20,11 @@ public class MonsterController : MonoBehaviour
     
     IEnumerator Coroutine_AfterWatchingPlayer()
     {
-        yield return new WaitForSeconds(3f);
-        agent.destination = goal.position;
-        anim.SetTrigger("IsRun");
-        gameManager.SFXSound_RunningMonster();
+        yield return new WaitForSeconds(3.5f);
+        agent.destination = nextPos.position;
+        anim.SetTrigger("isWalk");
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(6f);
         gameObject.SetActive(false);
     }
 }

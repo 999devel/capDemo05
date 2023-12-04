@@ -586,7 +586,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "..\uC774 \uC0C1\uC790\uC5D0 \uBB50\uAC00 \uB4E4\uC5C8\uB294\uC9C0\uB294
-          \uB9D0 \uC548\uD574\uB3C4 \uC54C\uACA0\uC9C0?"
+          \uB9D0 \uC548 \uD574\uB3C4 \uC54C\uACA0\uC9C0?"
         type: 0
         typeString: 
       - title: Sequence
@@ -641,8 +641,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\uC548\uD0C0\uAE4C\uC6B4 \uC77C\uC774\uC57C. \uC774\uB807\uAC8C \uBC16\uC5D0
-          \uC7A5\uB840\uB97C \uCE58\uB97C \uC218 \uC5C6\uB2E4\uB2C8."
+        value: "\uC548\uD0C0\uAE4C\uC6B4 \uC77C\uC774\uC57C. \uC774\uB807\uAC8C \uC218\uC2B5\uD560
+          \uC218 \uBC16\uC5D0 \uC5C6\uB2E4\uB2C8."
         type: 0
         typeString: 
       - title: Sequence
@@ -808,7 +808,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\uADF8\uB7FC, \uC0C1\uC790\uB97C \uC815\uB9AC\uD558\uBA74 \uC598\uAE30\uD574\uB77C."
+        value: "\uC606\uC758 \uC0C1\uC790\uB97C \uC815\uB9AC\uD558\uBA74 \uC598\uAE30\uD574\uB77C."
         type: 0
         typeString: 
       - title: Sequence
@@ -858,7 +858,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\uC544\uC9C1 \uC815\uB9AC\uAC00 \uC548\uB05D\uB0AC\uB098?"
+        value: "\uC544\uC9C1 \uC815\uB9AC\uAC00 \uC548\uB410\uB098?"
         type: 0
         typeString: 
       - title: Sequence
@@ -993,7 +993,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 618.24176
-        y: 128.90111
+        y: 130.54045
         width: 160
         height: 30
     - id: 12
@@ -1046,12 +1046,12 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 618.24176
-        y: 178.90111
+        y: 180.54045
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.85000014
+    canvasScrollPosition: {x: 0, y: 40.514523}
+    canvasZoom: 0.6100004
   syncInfo:
     syncActors: 0
     syncItems: 0

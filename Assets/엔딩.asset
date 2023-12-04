@@ -221,8 +221,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "(\uBD84\uBA85 \uAD34\uC218\uC5D0\uAC8C \uACF5\uACA9\uBC1B\uC740 \uAC83
-          \uAC19\uC740\uB370..)"
+        value: "(\uBD84\uBA85 \uAD34\uC218\uC5D0\uAC8C \uACF5\uACA9\uC744 \uBC1B\uC558\uB294\uB370
+          \uC5B4\uB5BB\uAC8C \uB41C \uC77C\uC774\uC9C0..)"
         type: 0
         typeString: 
       - title: Sequence
@@ -359,7 +359,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 56, y: 22}
     canvasZoom: 1
   syncInfo:
     syncActors: 0

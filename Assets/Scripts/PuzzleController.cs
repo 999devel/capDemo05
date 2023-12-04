@@ -39,7 +39,7 @@ public class PuzzleController : MonoBehaviour
     {
         for (int i = 0; i < bloodTexts.Count; i++)
         {
-            bloodTexts[i].transform.position = doorTransforms[i].position;
+            //bloodTexts[i].transform.position = doorTransforms[i].position;
             //bloodTexts[i].transform.rotation = doorTransforms[i].rotation;
         }
     }
