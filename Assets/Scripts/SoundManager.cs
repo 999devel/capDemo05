@@ -43,17 +43,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-
-
-    public void EnterWoods()
-    {
-        for (int i = 0; i < bglist.Length; i++)
-        {
-            if (bglist[i].name == "Woods")
-                BgSoundPlay(bglist[i]);
-        }
-    }
-
     public void BGVolumeControl(float val)
     {
         mixer.SetFloat("BGSoundVolume", MathF.Log10(val) * 20);
@@ -87,5 +76,15 @@ public class SoundManager : MonoBehaviour
         Destroy(go, clip.length);
     }
 
-    
+
+    public void OpenSoundControlPanel()
+    {
+        soundControlPanelInMainMenu.SetActive(true);
+    }
+
+    public void CloseSoundControllPanel()
+    {
+        soundControlPanelInMainMenu.SetActive(false);
+    }
+
 }

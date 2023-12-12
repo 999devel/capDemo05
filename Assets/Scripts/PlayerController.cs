@@ -12,12 +12,12 @@ public class PlayerController : MonoBehaviour
     public bool isPlayerMove;
 
     [Header("변수")]
-    public float moveSpeed = 5.0f; // 이동 속도 조절 변수
-    public float sensitivity = 2.0f; // 마우스 회전 감도
+    public float moveSpeed = 2.8f; // 이동 속도 조절 변수
+    public float sensitivity = 1.8f; // 마우스 회전 감도
     [SerializeField] private float headbobSpeed = 4f;
     [SerializeField] private float headbobAmount = 0.05f;
 
-    private Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
     private Camera playerCamera;
     AudioSource audioSource;
 
@@ -28,22 +28,38 @@ public class PlayerController : MonoBehaviour
     private float defaultYPos;
     private float timer;
 
-    [Header("퍼즐")]
-    public List<Transform> doorTransforms;
-    public List<GameObject> bloodTexts;
+    //[Header("퍼즐")]
+    //public List<Transform> doorTransforms;
+    //public List<GameObject> bloodTexts;
 
-    [HideInInspector] public bool isStartPuzzle;
-    int puzzleIndex;
+    //[HideInInspector] public bool isStartPuzzle;
+    //int puzzleIndex;
 
-    public GameObject TriggerPuzzleClear_21;
+    //public GameObject TriggerPuzzleClear_21;
 
     [Header("Quest07")]
-    public bool isRotateToDiedSoldier;
-    public bool isRotateToMonster;
+    [HideInInspector] public bool isRotateToDiedSoldier;
+    [HideInInspector] public bool isRotateToMonster;
     public Transform DiedSoldier;
     public Transform Monster_Mountain;
     float rotationSpeed = 1.7f;
 
+    [Header("Quest12")]
+    [HideInInspector] public bool isRotateToMonster_Village;
+    public Transform Monster_Village;
+
+    [Header("Quest16")]
+    [HideInInspector] public bool isRotateToStoneWall;
+    public Transform StoneWall;
+
+
+    [Header("Tuto02")]
+    [HideInInspector] public bool isRotateToDiedPeople_Tuto02;
+    public Transform DiedPeople;
+
+    [Header("Ending")]
+    [HideInInspector] public bool isRotateToSky;
+    public Transform sky;
 
 
 
@@ -55,8 +71,8 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         //퍼즐
-        Shuffle();
-        SetBloodTexts();
+        //Shuffle();
+        //SetBloodTexts();
 
     }
 
@@ -65,7 +81,6 @@ public class PlayerController : MonoBehaviour
     {
         if (playerCanMove)
         {
-            // WASD 키 입력 받기
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 
@@ -86,12 +101,17 @@ public class PlayerController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, mouseX, 0);
 
-            if (rb.velocity.x != 0 || rb.velocity.z != 0)
+            //if (rb.velocity.x != 0 || rb.velocity.z != 0)
+            //    isPlayerMove = true;
+            //else
+            //    isPlayerMove = false;
+
+            if (horizontalInput != 0 || verticalInput != 0)
                 isPlayerMove = true;
             else
                 isPlayerMove = false;
 
-            if (isPlayerMove)
+            if (isPlayerMove) //&& gameObject.name != "Player_Ending")
             {
                 if (!audioSource.isPlaying)
                     audioSource.Play();
@@ -99,7 +119,15 @@ public class PlayerController : MonoBehaviour
             else
                 audioSource.Stop();
         }
+        else
+            audioSource.Stop();
 
+        if (isRotateToDiedPeople_Tuto02)
+        {
+            Vector3 targetDirection = DiedPeople.position - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1f * Time.deltaTime);
+        }
 
         if (isRotateToDiedSoldier)
         {
@@ -117,6 +145,26 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (isRotateToMonster_Village)
+        {
+            Vector3 targetDirection = Monster_Village.position - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        if (isRotateToStoneWall)
+        {
+            Vector3 targetDirection = StoneWall.position - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        if (isRotateToSky)
+        {
+            Vector3 targetDirection = sky.position - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.3f * Time.deltaTime);
+        }
     }
 
     public void StartRotateToDiedSoldier()
@@ -137,33 +185,67 @@ public class PlayerController : MonoBehaviour
         isRotateToMonster = false;
     }
 
+    public void StartRotateToDiedPeople()
+    {
+        isRotateToDiedPeople_Tuto02 = true;
+    }
+    public void StopRotateToDiedPeople()
+    {
+        isRotateToDiedPeople_Tuto02 = false;
+    }
+    public void StartRotateToMonster_Village()
+    {
+        isRotateToMonster_Village = true;
+    }
+    public void StopRotateToMonster_Village()
+    {
+        isRotateToMonster_Village = false;
+    }
+
+    public void StartRotateToStoneWall()
+    {
+        isRotateToStoneWall = true;
+    }
+    public void StopRotateToStoneWall()
+    {
+        isRotateToStoneWall = false;
+    }
+
+    public void StartRotateToSky()
+    {
+        isRotateToSky = true;
+    }
+
+
+
+
 
 
 
     //퍼즐
     // 게임 오브젝트 리스트 배열 섞기 : 실패했을 경우 텍스트의 위치를 재배치하기 위함
-    public void Shuffle()
-    {
-        int n = bloodTexts.Count;
-        while (n > 1)
-        {
-            n--;
-            int k = Random.Range(0, n + 1);
-            GameObject transValue = bloodTexts[k];
-            bloodTexts[k] = bloodTexts[n];
-            bloodTexts[n] = transValue;
-        }
-    }
+    //public void Shuffle()
+    //{
+    //    int n = bloodTexts.Count;
+    //    while (n > 1)
+    //    {
+    //        n--;
+    //        int k = Random.Range(0, n + 1);
+    //        GameObject transValue = bloodTexts[k];
+    //        bloodTexts[k] = bloodTexts[n];
+    //        bloodTexts[n] = transValue;
+    //    }
+    //}
 
     // shuffle에서 섞인 텍스트 배열을 지정해놓은 위치에 배치하여 임의성 부여
-    public void SetBloodTexts()
-    {
-        for (int i = 0; i < bloodTexts.Count; i++)
-        {
-            bloodTexts[i].transform.position = doorTransforms[i].position;
-            bloodTexts[i].transform.rotation = doorTransforms[i].rotation;
-        }
-    }
+    //public void SetBloodTexts()
+    //{
+    //    for (int i = 0; i < bloodTexts.Count; i++)
+    //    {
+    //        bloodTexts[i].transform.position = doorTransforms[i].position;
+    //        bloodTexts[i].transform.rotation = doorTransforms[i].rotation;
+    //    }
+    //}
 
 
 

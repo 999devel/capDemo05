@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.010288027, g: 0.025061624, b: 0.010551328, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -458,6 +458,10 @@ MonoBehaviour:
   bloodTexts: []
   isStartPuzzle: 0
   TriggerPuzzleClear_21: {fileID: 0}
+  isRotateToDiedSoldier: 0
+  isRotateToMonster: 0
+  DiedSoldier: {fileID: 0}
+  Monster_Mountain: {fileID: 0}
 --- !u!4 &668989082
 Transform:
   m_ObjectHideFlags: 0
@@ -712,10 +716,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 971405385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337917536c56f614a90ffc401af919ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 19ad850d2ce3a6645936d0632024d527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 1302811050}
+  player: {fileID: 668989082}
 --- !u!1 &1302811049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1037,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146998663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 337917536c56f614a90ffc401af919ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 19ad850d2ce3a6645936d0632024d527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 1302811050}
+  player: {fileID: 668989082}

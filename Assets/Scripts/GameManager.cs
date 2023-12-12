@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     [Header("Sound")]
     public AudioClip[] sfxlist;
     public AudioClip impressedBG;
+    public AudioClip VillageBG;
     [HideInInspector]public AudioClip sfxSound;
 
     [Header("Puzzle")]
@@ -50,21 +51,48 @@ public class GameManager : MonoBehaviour
     public GameObject Soldier_Faded;
     public GameObject Soldier_AtEntrance;
 
+    [Header("05 Box")]
+    public GameObject getBox;
+    public GameObject Quest05Conversation;
+    public GameObject Quest05Conversation02;
+    public GameObject Quest06Box_Completed;
+
     [Header("07Watching Monster In the Mountain")]
     public GameObject Player;
     public GameObject Soldier_Ragdoll;
     public GameObject monster_InTheMountain;
 
-    [Header("Monster Controller")]
+    [Header("11 Scream")]
+    public GameObject Scream_Normal;
+    public GameObject Scream_FlipNeck;
+    public GameObject Scream_Run;
+    public GameObject Scream_Face;
+    public GameObject After_Scream_Conversation;
+    public NavMeshAgent screamNav_Run;
+    public List<Transform> screamWayPoint = new List<Transform>();
+    int screamIndex;
+    Coroutine coScreamRun;
+
+    [Header("12 Monster")]
     public NavMeshAgent monsterNav;
-    public Animator monsterAnim;
     public List<Transform> monsterWayPoint = new List<Transform>();
     int monsterIndex;
     Coroutine coMonsterRun;
     public GameObject monster;
+    public GameObject Conversation12;
+
+    [Header("16 Monster")]
+    public GameObject playerBody;
+    public NavMeshAgent ChaseMonsterNav;
+    public List<Transform> ChaseMonsterWayPoint = new List<Transform>();
+    int ChaseMonsterIndex;
+    Coroutine coMonsterChase;
+    public GameObject ChaseMonster;
+
 
     [Header("Flash Scarecrow")]
     public GameObject flashed_Scarecrow;
+    public GameObject Quest11afterFlashScarecrowBox;
 
     [Header("Death Scean")]
     public GameObject playerCamera;
@@ -77,9 +105,25 @@ public class GameManager : MonoBehaviour
     public GameObject Quest07;
     public GameObject Quest07Block;
     public GameObject Quest07DiedSoldier;
+    public GameObject Quest08BigFire;
     public GameObject Quest08ConversationTrigger;
+    public GameObject Quest09Conversation;
+    //public GameObject Quest15MidiumFire01;
+    //public GameObject Quest15MidiumFire02;
+    //public GameObject Quest15MidiumFire03;
+    //public GameObject Quest15MidiumFire04;
+    //public GameObject Quest15Conversation01;
+    //public GameObject Quest15Conversation02;
+    //public GameObject Quest15Conversation03;
+    //public GameObject Quest15Conversation04;
+    public GameObject Quest14Conversation;
+    public GameObject Quest15ConversationGoLastBox;
+    public GameObject Quest16conversation;
 
-
+    [Header("Ending")]
+    public GameObject EndingUITrigger;
+    public GameObject FireGroup;
+    
 
 
 
@@ -90,20 +134,23 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Map.activeSelf == true)
+        if(SceneManager.GetActiveScene().name == "Village")
         {
-            if (Input.GetKeyDown(KeyCode.M))
+            if (Map.activeSelf == true)
             {
-                Map.SetActive(false);
-                UnBindPlayerMoving();
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    Map.SetActive(false);
+                    UnBindPlayerMoving();
+                }
             }
-        }
-        else if(Map.activeSelf == false)
-        {
-            if (Input.GetKeyDown(KeyCode.M))
+            else if (Map.activeSelf == false)
             {
-                Map.SetActive(true);
-                BindPlayerMoving();
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    Map.SetActive(true);
+                    BindPlayerMoving();
+                }
             }
         }
 
@@ -262,10 +309,10 @@ public class GameManager : MonoBehaviour
         SoundManager.instance.SFXPlayer("CheckingDoor", sfxSound);
     }
 
-    public void SFXSound_OpeningDoor()
+    public void SFXSound_Impact()
     {
-        FindCorrectSFXSound("OpeningDoor");
-        SoundManager.instance.SFXPlayer("OpeningDoor", sfxSound);
+        FindCorrectSFXSound("Impact");
+        SoundManager.instance.SFXPlayer("Impact", sfxSound);
     }
 
     public void SFXSound_ScarecrowWalking()
@@ -304,15 +351,37 @@ public class GameManager : MonoBehaviour
         SoundManager.instance.SFXPlayer("FlashScarecrow", sfxSound);
     }
 
+    public void SFXSound_BigFire()
+    {
+        FindCorrectSFXSound("BigFire");
+        SoundManager.instance.SFXPlayer("BigFire", sfxSound);
+    }
+    public void SFXSound_MediumFire()
+    {
+        FindCorrectSFXSound("MediumFire");
+        SoundManager.instance.SFXPlayer("MediumFire", sfxSound);
+    }
+    public void SFXSound_SmallFire()
+    {
+        FindCorrectSFXSound("SmallFire");
+        SoundManager.instance.SFXPlayer("SmallFire", sfxSound);
+    }
+
 
     public void BGSound_ImpressedBG()
     {
         SoundManager.instance.BgSoundPlay(impressedBG);
     }
 
+    public void BGSound_Village()
+    {
+        SoundManager.instance.BgSoundPlay(VillageBG);
+    }
+
     public void BindPlayerMoving()
     {
         playerController.playerCanMove = false;     // ui 조작 중 플레이어의 화면 회전을 막기 위함
+        playerController.isPlayerMove = false;
     }
 
     public void UnBindPlayerMoving()
@@ -399,6 +468,47 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    //05 상자
+    #region
+    public void Action05_GetBox()
+    {
+        StartCoroutine(coAction05_GetBox());
+    }
+
+    IEnumerator coAction05_GetBox()
+    {
+        BindPlayerMoving();
+        FadeIn(2f);
+        yield return new WaitForSeconds(2.1f);
+        getBox.SetActive(true);
+        FadeOut(2f);
+        yield return new WaitForSeconds(2f);
+        playerController.moveSpeed = 2.2f;
+        Quest05Conversation.SetActive(true);
+        UnBindPlayerMoving();
+    }
+
+    public void Action05_DropBox()
+    {
+        StartCoroutine(coAction05_DropBox());
+    }
+
+    IEnumerator coAction05_DropBox()
+    {
+        BindPlayerMoving();
+        FadeIn(2f);
+        yield return new WaitForSeconds(2.1f);
+        getBox.SetActive(false);
+        Quest06Box_Completed.SetActive(true);
+        FadeOut(2f);
+        UnBindPlayerMoving();
+        yield return new WaitForSeconds(2f);
+        playerController.moveSpeed = 2.8f;
+        Quest05Conversation02.SetActive(true);
+    }
+
+    #endregion
+
     // 06몬스터
     #region
 
@@ -413,6 +523,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.7f);
         BindPlayerMoving();
+        SFXSound_FallingSoldier();
         yield return new WaitForSeconds(1.2f);
         playerController.StartRotateToDiedSoldier();
         yield return new WaitForSeconds(3f);
@@ -430,6 +541,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     // 07시신정리
+    #region
     public void Action07()
     {
         StartCoroutine(coAcition07());
@@ -445,8 +557,11 @@ public class GameManager : MonoBehaviour
         FadeOut(2f);
         UnBindPlayerMoving();
     }
+    #endregion
 
     //08 옷 태우기
+    #region
+
     public void Action08_FireClothes()
     {
         StartCoroutine(coAction08_FireClothes());
@@ -458,13 +573,71 @@ public class GameManager : MonoBehaviour
         FadeIn(2f);
         yield return new WaitForSeconds(2.1f);
         FadeOut(2f);
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSeconds(2f);
         UnBindPlayerMoving();
+        Quest08BigFire.SetActive(true);
         Quest08ConversationTrigger.SetActive(true);
     }
+    #endregion
 
+    //11 스크림
+    #region
+    public void Action11()
+    {
+        StartCoroutine(coAction11());
+    }
 
-    // 18몬스터 삼거리에 잠깐 비춰지는 움직임
+    IEnumerator coAction11()
+    {
+        //BindPlayerMoving();
+        //yield return new WaitForSeconds(0.5f);
+        //Scream_Normal.SetActive(false);
+        //Scream_FlipNeck.SetActive(true);
+        //SFXSound_RunningMonster();
+        //yield return new WaitForSeconds(3f);
+        //Scream_FlipNeck.SetActive(false);
+        //Scream_Run.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SFXSound_Scream();
+        Scream_Face.SetActive(true);
+        yield return new WaitForSeconds(0.6f);
+        Scream_Face.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        After_Scream_Conversation.SetActive(true);
+        //coScreamRun = StartCoroutine(ScreamRun());
+    }
+
+    IEnumerator ScreamRun()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+
+            screamNav_Run.destination = screamWayPoint[screamIndex].position;
+
+            if (!screamNav_Run.pathPending && screamNav_Run.remainingDistance < 0.5f)
+                Scream_GotoNext();
+            if(screamIndex == screamWayPoint.Count)
+            {
+                Scream_Run.SetActive(false);
+                Scream_Face.SetActive(true);
+                yield return new WaitForSeconds(0.6f);
+                Scream_Face.SetActive(false);
+                yield return new WaitForSeconds(1f);
+                After_Scream_Conversation.SetActive(true);
+                StopCoroutine(coAction11());
+            }
+        }
+    }
+
+    void Scream_GotoNext()
+    {
+        screamNav_Run.destination = screamWayPoint[screamIndex].position;
+        screamIndex = (screamIndex + 1);
+    }
+#endregion
+
+    // 12몬스터 삼거리에 잠깐 비춰지는 움직임
     #region
     public void MonsterSetting()
     {
@@ -476,26 +649,184 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.3f);
-
-            //monsterAnim.SetTrigger("isRun");
+            yield return new WaitForSeconds(0.1f);
+            BindPlayerMoving();
+            monster.SetActive(true);
+            playerController.StartRotateToMonster_Village();
             monsterNav.destination = monsterWayPoint[monsterIndex].position;
 
-            if (!monsterNav.pathPending && monsterNav.remainingDistance < 1f)
+            if (!monsterNav.pathPending && monsterNav.remainingDistance < 0.5f)
                 Monster_GotoNext(); //목적지까지의 거리가 1이하거나 도착했으면 함수실행
             if (monsterIndex == monsterWayPoint.Count)
             {
+                playerController.StopRotateToMonster_Village();
                 monster.SetActive(false);
+                UnBindPlayerMoving();
+                StartCoroutine(TriggerConversation12());
                 StopCoroutine(coMonsterRun);
             }
         }
     }
+
+    IEnumerator TriggerConversation12()
+    {
+        yield return new WaitForSeconds(1f);
+        Conversation12.SetActive(true);
+    }
+
     void Monster_GotoNext()
     {
         monsterNav.destination = monsterWayPoint[monsterIndex].position;
         monsterIndex = (monsterIndex + 1);
     }
     #endregion
+
+    // 14
+    public void Action14()
+    {
+        StartCoroutine(coAction14());
+    }
+
+    IEnumerator coAction14()
+    {
+        yield return new WaitForSeconds(1f);
+        Quest14Conversation.SetActive(true);
+    }
+
+    // 15 상자에 상호작용 순서대로
+
+    public void Action15()
+    {
+        StartCoroutine(coAction15());
+    }
+
+    IEnumerator coAction15()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SFXSound_Impact();
+    }
+
+    public void Action15_1()
+    {
+        StartCoroutine(coAction15_1());
+    }
+
+    IEnumerator coAction15_1()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SFXSound_Impact();
+        yield return new WaitForSeconds(1f);
+        Quest15ConversationGoLastBox.SetActive(true);
+    }
+
+    //IEnumerator coAction15_1()
+    //{
+    //    BindPlayerMoving();
+    //    FadeIn(2f);
+    //    yield return new WaitForSeconds(2.1f);
+    //    FadeOut(2f);
+    //    UnBindPlayerMoving();
+    //    Quest15MidiumFire01.SetActive(true);
+    //    Quest15Conversation01.SetActive(true);
+    //    yield return new WaitForSeconds(1.5f);
+    //    SFXSound_Impact();
+    //}
+    //public void Action15_2()
+    //{
+    //    StartCoroutine(coAction15_2());
+    //}
+
+    //IEnumerator coAction15_2()
+    //{
+    //    BindPlayerMoving();
+    //    FadeIn(2f);
+    //    yield return new WaitForSeconds(2.1f);
+    //    FadeOut(2f);
+    //    UnBindPlayerMoving();
+    //    Quest15MidiumFire02.SetActive(true);
+    //    Quest15Conversation02.SetActive(true);
+
+    //}
+    //public void Action15_3()
+    //{
+    //    StartCoroutine(coAction15_3());
+    //}
+
+    //IEnumerator coAction15_3()
+    //{
+    //    BindPlayerMoving();
+    //    FadeIn(2f);
+    //    yield return new WaitForSeconds(2.1f);
+    //    FadeOut(2f);
+    //    UnBindPlayerMoving();
+    //    Quest15MidiumFire03.SetActive(true);
+    //    Quest15Conversation03.SetActive(true);
+    //}
+
+    //public void Action15_4()
+    //{
+    //    StartCoroutine(coAction15_4());
+    //}
+
+
+    //IEnumerator coAction15_4()
+    //{
+    //    BindPlayerMoving();
+    //    FadeIn(2f);
+    //    yield return new WaitForSeconds(2.1f);
+    //    FadeOut(2f);
+    //    UnBindPlayerMoving();
+    //    Quest15MidiumFire04.SetActive(true);
+    //    Quest15Conversation04.SetActive(true);
+    //}
+
+    public void Action16()
+    {
+        StartCoroutine(coAction16());
+    }
+
+    IEnumerator coAction16()
+    {
+        yield return new WaitForSeconds(1.5f);
+        BindPlayerMoving();
+        playerController.StartRotateToStoneWall();
+        yield return new WaitForSeconds(1.5f);
+        playerController.StopRotateToStoneWall();
+        Quest16conversation.SetActive(true);
+        UnBindPlayerMoving();
+    }
+
+    public void MonsterChaseSetting()
+    {
+        coMonsterChase = StartCoroutine(MonsterChase());
+    }
+
+
+    IEnumerator MonsterChase()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            ChaseMonster.SetActive(true);
+            ChaseMonsterNav.destination = ChaseMonsterWayPoint[ChaseMonsterIndex].position;
+
+            if (!ChaseMonsterNav.pathPending && ChaseMonsterNav.remainingDistance < 0.5f)
+                ChaseMonster_GotoNext(); //목적지까지의 거리가 1이하거나 도착했으면 함수실행
+            if (ChaseMonsterIndex == ChaseMonsterWayPoint.Count)
+            {
+                ChaseMonster.SetActive(false);
+                StartCoroutine(coLoadDeathScene());
+                StopCoroutine(coMonsterChase);
+            }
+        }
+    }
+
+    void ChaseMonster_GotoNext()
+    {
+        ChaseMonsterNav.destination = ChaseMonsterWayPoint[ChaseMonsterIndex].position;
+        ChaseMonsterIndex = (ChaseMonsterIndex + 1);
+    }
+
 
     public void ClosePauseMenu()
     {
@@ -508,7 +839,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    // 15플래쉬 허수아비
+    // 09플래쉬 허수아비
     #region
     public void FlashScarecrow()
     {
@@ -517,31 +848,54 @@ public class GameManager : MonoBehaviour
 
     IEnumerator coFlashScarecrow()
     {
-        yield return new WaitForSeconds(1.7f);
-        flashed_Scarecrow.SetActive(true);
         yield return new WaitForSeconds(1.2f);
+        SFXSound_FlashScarecrow();
+        flashed_Scarecrow.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         flashed_Scarecrow.SetActive(false);
+        Quest11afterFlashScarecrowBox.SetActive(true);
+    }
+
+    public void Action09Conversation()
+    {
+        StartCoroutine(coAction09Conversation());
+    }
+
+    IEnumerator coAction09Conversation()
+    {
+        yield return new WaitForSeconds(1);
+        Quest09Conversation.SetActive(true);
     }
     #endregion
 
-    //퍼즐 클리어 이후 공격받는 신
+    // 16 공격 받는 씬
     #region
-    public void LoadDeathScene()
-    {
-        StartCoroutine(coLoadDeathScene());
-    }
 
     IEnumerator coLoadDeathScene()
     {
-        yield return new WaitForSeconds(3.5f);
-        playerCamera.SetActive(false);
-        deathSceneCamera.SetActive(true);
-        deathSceanMonster.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        BindPlayerMoving();
+        //playerCamera.SetActive(false);
+        playerBody.SetActive(false);
+        //Player.transform.LookAt(ChaseMonster.transform.localPosition);
+        Player.transform.DOLocalRotate(new Vector3(-80, 0, 0), 2f);
+        //deathSceneCamera.SetActive(true);
+        //deathSceanMonster.SetActive(true);
+        yield return new WaitForSeconds(3f);
         blackBackground.SetActive(true);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Ending");
     }
     #endregion
+
+    public void OpenSoundControlPanel()
+    {
+        SoundManager.instance.OpenSoundControlPanel();
+    }
+
+    public void ClosdSoundControlPanel()
+    {
+        SoundManager.instance.CloseSoundControllPanel();
+
+    }
 
 }
