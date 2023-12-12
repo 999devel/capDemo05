@@ -44,6 +44,10 @@ public class QuestInfoUIController : MonoBehaviour
         EditText("잠자리 정리");
         OnUIFade();
     }
+    public void OnUI03_Village()
+    {
+        EditText("포졸과 대화");
+    }
 
     public void OnUI04_Village()
     {

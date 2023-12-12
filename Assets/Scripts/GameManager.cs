@@ -94,11 +94,12 @@ public class GameManager : MonoBehaviour
     public GameObject flashed_Scarecrow;
     public GameObject Quest11afterFlashScarecrowBox;
 
-    [Header("Death Scean")]
+    [Header("Death Scene")]
     public GameObject playerCamera;
     public GameObject deathSceneCamera;
     public GameObject deathSceanMonster;
     public GameObject blackBackground;
+    public GameObject Quest16ConversationBeforeDeathScene;
 
     [Header("Quest")]
     public GameObject Quest01;
@@ -804,21 +805,21 @@ public class GameManager : MonoBehaviour
 
     IEnumerator MonsterChase()
     {
-        while (true)
-        {
+        //while (true)
+        //{
             yield return new WaitForSeconds(0.1f);
             ChaseMonster.SetActive(true);
-            ChaseMonsterNav.destination = ChaseMonsterWayPoint[ChaseMonsterIndex].position;
+            //ChaseMonsterNav.destination = ChaseMonsterWayPoint[ChaseMonsterIndex].position;
 
-            if (!ChaseMonsterNav.pathPending && ChaseMonsterNav.remainingDistance < 0.5f)
-                ChaseMonster_GotoNext(); //목적지까지의 거리가 1이하거나 도착했으면 함수실행
-            if (ChaseMonsterIndex == ChaseMonsterWayPoint.Count)
-            {
-                ChaseMonster.SetActive(false);
-                StartCoroutine(coLoadDeathScene());
-                StopCoroutine(coMonsterChase);
-            }
-        }
+            //if (!ChaseMonsterNav.pathPending && ChaseMonsterNav.remainingDistance < 0.5f)
+            //    ChaseMonster_GotoNext(); //목적지까지의 거리가 1이하거나 도착했으면 함수실행
+            //if (ChaseMonsterIndex == ChaseMonsterWayPoint.Count)
+            //{
+            //    ChaseMonster.SetActive(false);
+            //    StartCoroutine(coLoadDeathScene());
+            //    StopCoroutine(coMonsterChase);
+            //}
+        //}
     }
 
     void ChaseMonster_GotoNext()
@@ -871,20 +872,43 @@ public class GameManager : MonoBehaviour
     // 16 공격 받는 씬
     #region
 
+    public void LoadDeathScene()
+    {
+        StartCoroutine(coLoadDeathScene());
+    }
+
     IEnumerator coLoadDeathScene()
     {
         BindPlayerMoving();
-        //playerCamera.SetActive(false);
         playerBody.SetActive(false);
+        Instantiate(deathSceneCamera, new Vector3(ChaseMonster.transform.position.x, -18.7f, ChaseMonster.transform.position.z), Quaternion.LookRotation(deathSceneCamera.transform.position, ChaseMonster.transform.position));
         //Player.transform.LookAt(ChaseMonster.transform.localPosition);
-        Player.transform.DOLocalRotate(new Vector3(-80, 0, 0), 2f);
-        //deathSceneCamera.SetActive(true);
-        //deathSceanMonster.SetActive(true);
+        deathSceneCamera.transform.DOLocalRotate(new Vector3(-80, 0, 0), 2f);
         yield return new WaitForSeconds(3f);
         blackBackground.SetActive(true);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Ending");
     }
+
+    public void BeforeDeathSceneConversaionEnd()
+    {
+        StartCoroutine(coBeforeDeathSceneConversaionEnd());
+    }
+
+    IEnumerator coBeforeDeathSceneConversaionEnd()
+    {
+        yield return new WaitForSeconds(1);
+        BindPlayerMoving();
+        FadeIn(2);
+        yield return new WaitForSeconds(2.1f);
+        Player.transform.DOLocalRotate(new Vector3(0, 105, 0), 0);
+        FadeOut(2);
+        yield return new WaitForSeconds(2f);
+        Quest16ConversationBeforeDeathScene.SetActive(true);
+
+    }
+
+
     #endregion
 
     public void OpenSoundControlPanel()

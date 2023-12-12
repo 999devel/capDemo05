@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 targetDirection = DiedPeople.position - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1f * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1.5f * Time.deltaTime);
         }
 
         if (isRotateToDiedSoldier)
